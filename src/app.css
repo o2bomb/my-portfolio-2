@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --font-oswald-regular: normal 3rem 'Oswald';
   --font-oswald-medium: 500 3rem 'Oswald';

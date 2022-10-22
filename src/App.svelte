@@ -25,7 +25,7 @@
       height="600px"
     />
     <Card>
-      <h1 class="oswald-bold">Hello There</h1>
+      <h1 class="oswald-bold underline">Hello There</h1>
       <p class="worksans-regular">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
         distinctio deleniti quisquam voluptatibus ipsum? Aspernatur ut, ullam
