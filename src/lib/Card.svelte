@@ -4,7 +4,7 @@
 </script>
 
 <div class="c-Card" style="--cardHeight:{cardHeight};--cardWidth:{cardWidth}">
-  <div class="border" />
+  <div class="fancy-border" />
   <div class="content">
     <slot />
     <div class="effect reveal" />
@@ -30,7 +30,7 @@
     animation: expand 0.8s;
   }
 
-  .border {
+  .fancy-border {
     overflow: hidden;
     position: absolute;
     top: -2px;
@@ -39,7 +39,7 @@
     bottom: -2px;
   }
 
-  .border::before {
+  .fancy-border::before {
     content: "";
     position: absolute;
     top: 0;
@@ -53,7 +53,7 @@
     background-color: #ebad50;
   }
 
-  .border::after {
+  .fancy-border::after {
     content: "";
     position: absolute;
     top: 0;
@@ -67,10 +67,10 @@
     background-color: #ebad50;
   }
 
-  .c-Card:hover .border::before {
+  .c-Card:hover .fancy-border::before {
     transform: rotate(0);
   }
-  .c-Card:hover .border::after {
+  .c-Card:hover .fancy-border::after {
     transform: rotate(0);
   }
 

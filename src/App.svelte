@@ -4,7 +4,7 @@
 </script>
 
 <main>
-  <div class="spaced">
+  <div class="space-y-4">
     <!-- <ImageCard
       src="https://pbs.twimg.com/media/FRGuSJ3VIAAzOAD?format=jpg&name=large"
       alt="demon woman"
@@ -37,7 +37,4 @@
 </main>
 
 <style>
-  .spaced > :global(*:not(:last-child)) {
-    margin-bottom: 1rem;
-  }
 </style>
