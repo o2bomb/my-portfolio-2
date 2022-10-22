@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Card from "./lib/Card.svelte";
   import ImageCard from "./lib/ImageCard.svelte";
 </script>
 
@@ -23,6 +24,15 @@
       width="300px"
       height="600px"
     />
+    <Card>
+      <h1 class="oswald-bold">Hello There</h1>
+      <p class="worksans-regular">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+        distinctio deleniti quisquam voluptatibus ipsum? Aspernatur ut, ullam
+        consequuntur at non aliquam eligendi cumque delectus, maiores suscipit
+        quasi magni natus quo?
+      </p>
+    </Card>
   </div>
 </main>
 

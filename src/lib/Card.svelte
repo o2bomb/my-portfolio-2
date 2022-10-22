@@ -50,7 +50,7 @@
     transform: rotate(180deg);
     transform-origin: 0 0;
     transition: transform 0.5s;
-    background-color: darkgoldenrod;
+    background-color: #ebad50;
   }
 
   .border::after {
@@ -64,7 +64,7 @@
     transform: rotate(180deg);
     transform-origin: bottom right;
     transition: transform 0.5s;
-    background-color: darkgoldenrod;
+    background-color: #ebad50;
   }
 
   .c-Card:hover .border::before {
