@@ -33,10 +33,10 @@
   .fancy-border {
     overflow: hidden;
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
   }
 
   .fancy-border::before {
