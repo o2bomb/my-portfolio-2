@@ -1,9 +1,7 @@
 <script lang="typescript">
-  export let cardHeight = `300px`;
-  export let cardWidth = `200px`;
 </script>
 
-<div class="c-Card" style="--cardHeight:{cardHeight};--cardWidth:{cardWidth}">
+<div class="c-Card">
   <div class="fancy-border" />
   <div class="content">
     <slot />
@@ -16,10 +14,9 @@
   .c-Card {
     position: relative;
     display: flex;
-    height: var(--cardHeight);
-    width: var(--cardWidth);
     align-items: center;
     justify-content: center;
+    width: fit-content;
   }
 
   .content {
@@ -27,7 +24,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    animation: expand 0.8s;
+    animation: expand 0.5s;
   }
 
   .fancy-border {
@@ -96,10 +93,10 @@
 
   @keyframes expand {
     0% {
-      max-height: 0;
+      clip-path: inset(50% 0 50% 0);
     }
     100% {
-      max-height: var(--cardHeight);
+      clip-path: inset(0);
     }
   }
 

@@ -1,37 +1,36 @@
 <script lang="ts">
   import Card from "./lib/Card.svelte";
-  import ImageCard from "./lib/ImageCard.svelte";
 </script>
 
 <main>
-  <div class="space-y-4">
-    <!-- <ImageCard
-      src="https://pbs.twimg.com/media/FRGuSJ3VIAAzOAD?format=jpg&name=large"
-      alt="demon woman"
-    />
-    <ImageCard
-      src="https://pbs.twimg.com/media/FKtEAIZXEAgXd_n?format=jpg&name=large"
-      alt="robot"
-    /> -->
-    <ImageCard
-      src="https://pbs.twimg.com/media/Fb16NExXwAYt1wI?format=jpg&name=4096x4096"
-      alt="flying kites"
-      width="600px"
-    />
-    <ImageCard
-      src="https://pbs.twimg.com/media/FGj1QqpUYAEDfe4?format=jpg&name=4096x4096"
-      alt="despair"
-      width="300px"
-      height="600px"
-    />
+  <div class="flex items-center space-x-4">
     <Card>
-      <h1 class="oswald-bold underline">Hello There</h1>
-      <p class="worksans-regular">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-        distinctio deleniti quisquam voluptatibus ipsum? Aspernatur ut, ullam
-        consequuntur at non aliquam eligendi cumque delectus, maiores suscipit
-        quasi magni natus quo?
-      </p>
+      <img
+        src="https://pbs.twimg.com/media/FRGuSJ3VIAAzOAD?format=jpg&name=large"
+        alt="demon woman"
+        style="width: 100%; max-width: 300px;"
+      />
+    </Card>
+    <Card>
+      <img
+        src="https://pbs.twimg.com/media/FKtEAIZXEAgXd_n?format=jpg&name=large"
+        alt="robot"
+        style="width: 100%; max-width: 500px;"
+      />
+    </Card>
+    <Card>
+      <img
+        src="https://pbs.twimg.com/media/Fb16NExXwAYt1wI?format=jpg&name=4096x4096"
+        alt="flying kites"
+        style="width: 100%; max-width: 600px;"
+      />
+    </Card>
+    <Card>
+      <img
+        src="https://pbs.twimg.com/media/FGj1QqpUYAEDfe4?format=jpg&name=4096x4096"
+        alt="despair"
+        style="width: 100%; max-width: 300px;"
+      />
     </Card>
   </div>
 </main>
