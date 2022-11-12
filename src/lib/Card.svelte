@@ -93,10 +93,10 @@
 
   @keyframes expand {
     0% {
-      clip-path: inset(50% 0 50% 0);
+      clip-path: inset(50% 0% 50% 0%);
     }
     100% {
-      clip-path: inset(0);
+      clip-path: inset(0% 0% 0% 0%);
     }
   }
 
