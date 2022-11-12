@@ -1,8 +1,11 @@
 <script lang="ts">
   import Card from "./lib/Card.svelte";
+  import Sidebar from "./lib/Sidebar.svelte";
+
+  let showSidebar = true;
 </script>
 
-<main>
+<main class="flex-1">
   <div class="flex items-center space-x-4">
     <Card>
       <img
@@ -33,7 +36,13 @@
       />
     </Card>
   </div>
+  <button
+    on:click={(e) => {
+      showSidebar = !showSidebar;
+    }}>{showSidebar ? "Close" : "Show"} sidebar</button
+  >
 </main>
+<Sidebar open={showSidebar} />
 
 <style>
 </style>
