@@ -41,6 +41,8 @@
       showSidebar = !showSidebar;
     }}>{showSidebar ? "Close" : "Show"} sidebar</button
   >
+
+  <div id="tan" style="transform: translate(50px, 1rem);">bruh bruh bruh</div>
 </main>
 <Sidebar open={showSidebar} />
 
