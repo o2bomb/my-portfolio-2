@@ -3,6 +3,7 @@
   import type { EasingFunction, TransitionConfig } from "svelte/transition";
 
   export let open = true;
+  export let unmountOnExit = false;
 
   interface NavbarSlideParams {
     delay?: number;
@@ -28,8 +29,19 @@
   };
 </script>
 
-{#if open}
-  <div class="c-Sidebar" transition:navbarSlide>
+{#if unmountOnExit}
+  {#if open}
+    <div class="c-Sidebar" transition:navbarSlide>
+      <div class="content">
+        <a>Link one</a>
+        <a>Link two</a>
+        <a>Link three</a>
+        <a>Link four</a>
+      </div>
+    </div>
+  {/if}
+{:else}
+  <div class="c-Sidebar transition" class:open>
     <div class="content">
       <a>Link one</a>
       <a>Link two</a>
@@ -48,5 +60,14 @@
 
   .content {
     width: calc(min(300px, 100vw));
+  }
+
+  .transition {
+    flex-basis: 0;
+    transition: flex-basis 0.5s ease-out;
+  }
+
+  .open {
+    flex-basis: 300px;
   }
 </style>
