@@ -1,17 +1,18 @@
 <script lang="ts">
-  import Sidebar from "./lib/Sidebar.svelte";
+  import Sidebar from "./lib/Sidebar/Sidebar.svelte";
+  import SidebarButton from "./lib/Sidebar/SidebarButton.svelte";
 
   let showSidebar = true;
 </script>
 
-<main class="flex-1">
-  <button
-    on:click={(e) => {
-      showSidebar = !showSidebar;
-    }}>{showSidebar ? "Close" : "Show"} sidebar</button
-  >
-</main>
 <Sidebar open={showSidebar} unmountOnExit />
+<SidebarButton
+  onclick={() => {
+    showSidebar = !showSidebar;
+  }}
+  open={showSidebar}
+/>
+<main class="flex-1" />
 
 <style>
 </style>

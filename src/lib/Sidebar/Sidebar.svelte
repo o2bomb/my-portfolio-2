@@ -1,6 +1,7 @@
 <script lang="typescript">
   import { sineOut } from "svelte/easing";
   import type { EasingFunction, TransitionConfig } from "svelte/transition";
+  import SidebarContent from "./SidebarContent.svelte";
 
   export let open = true;
   export let unmountOnExit = false;
@@ -33,20 +34,14 @@
   {#if open}
     <div class="c-Sidebar" transition:navbarSlide>
       <div class="content">
-        <a>Link one</a>
-        <a>Link two</a>
-        <a>Link three</a>
-        <a>Link four</a>
+        <SidebarContent />
       </div>
     </div>
   {/if}
 {:else}
   <div class="c-Sidebar transition" class:open>
     <div class="content">
-      <a>Link one</a>
-      <a>Link two</a>
-      <a>Link three</a>
-      <a>Link four</a>
+      <SidebarContent />
     </div>
   </div>
 {/if}
