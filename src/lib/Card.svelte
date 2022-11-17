@@ -1,7 +1,9 @@
 <script lang="typescript">
+  export { className as class };
+  let className: string | undefined;
 </script>
 
-<div class="c-Card">
+<div class="c-Card {className || ''}">
   <div class="fancy-border" />
   <div class="content">
     <slot />

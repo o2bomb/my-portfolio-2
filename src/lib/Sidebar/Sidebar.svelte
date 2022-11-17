@@ -3,7 +3,7 @@
   import type { EasingFunction, TransitionConfig } from "svelte/transition";
   import SidebarContent from "./SidebarContent.svelte";
 
-  export let open = true;
+  export let open = false;
   export let unmountOnExit = false;
 
   interface NavbarSlideParams {
