@@ -1,15 +1,17 @@
 <script lang="typescript">
   export { className as class };
+  export { animate };
   let className: string | undefined;
+  let animate: boolean;
 </script>
 
 <div class="c-Card {className || ''}">
   <div class="fancy-border" />
-  <div class="content">
+  <div class="content expand" class:animate>
     <slot />
-    <div class="effect reveal" />
+    <div class="effect reveal" class:animate />
   </div>
-  <div class="effect flash" />
+  <div class="effect flash" class:animate />
 </div>
 
 <style>
@@ -26,7 +28,13 @@
     position: relative;
     height: 100%;
     width: 100%;
-    animation: expand 0.5s;
+  }
+
+  .expand {
+    clip-path: inset(50% 0% 50% 0%);
+  }
+  .expand.animate {
+    animation: expand 0.5s forwards;
   }
 
   .fancy-border {
@@ -85,11 +93,15 @@
   .flash {
     background-color: white;
     opacity: 0;
-    animation: flash 0.9s 0.3s;
+  }
+  .flash.animate {
+    animation: flash 0.9s 0.3s forwards;
   }
 
   .reveal {
     background-color: rgba(0, 0, 0, 0.8);
+  }
+  .reveal.animate {
     animation: reveal 0.15s 0.3s forwards;
   }
 
