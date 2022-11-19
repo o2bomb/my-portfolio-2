@@ -7,8 +7,10 @@
   let animate: boolean;
 
   let el: HTMLDivElement;
-  let resultRotX = "0deg";
-  let resultRotY = "0deg";
+  let currRotX = 0;
+  let currRotY = 0;
+  let targetRotX = 0;
+  let targetRotY = 0;
 
   onMount(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -16,22 +18,38 @@
       const normY = (e.offsetY - el.offsetHeight / 2) / (el.offsetHeight / 2);
 
       const maxDeg = 10;
-      resultRotX = `${maxDeg * -normY}deg`;
-      resultRotY = `${maxDeg * normX}deg`;
+      targetRotX = maxDeg * -normY;
+      targetRotY = maxDeg * normX;
     };
 
-    const handleMouseLeave = (e: MouseEvent) => {};
+    let prevTime = 0;
+    let desiredElapsed = 1000 / 60; // desired interval is 60fps
+    const frame: FrameRequestCallback = (time) => {
+      requestAnimationFrame(frame);
+      const elapsed = time - prevTime;
+      if (elapsed < desiredElapsed) return;
+
+      currRotX = lerp(currRotX, targetRotX, 0.1);
+      currRotY = lerp(currRotY, targetRotY, 0.1);
+      prevTime = time;
+    };
+    requestAnimationFrame(frame);
 
     el.addEventListener("mousemove", handleMouseMove);
     return () => {
       el.removeEventListener("mousemove", handleMouseMove);
     };
   });
+
+  // https://en.wikipedia.org/wiki/Linear_interpolation#Programming_language_support
+  const lerp = (start: number, end: number, alpha: number) => {
+    return (1 - alpha) * start + alpha * end;
+  };
 </script>
 
 <div
   bind:this={el}
-  style="--rotate-x:{resultRotX}; --rotate-y:{resultRotY}"
+  style="--rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg"
   class="c-Card {className || ''}"
 >
   <div class="wrap">
