@@ -21,11 +21,13 @@
       targetRotX = maxDeg * -normY;
       targetRotY = maxDeg * normX;
     };
+    el.addEventListener("mousemove", handleMouseMove);
 
+    let frameId: number;
     let prevTime = 0;
     let desiredElapsed = 1000 / 60; // desired interval is 60fps
     const frame: FrameRequestCallback = (time) => {
-      requestAnimationFrame(frame);
+      frameId = requestAnimationFrame(frame);
       const elapsed = time - prevTime;
       if (elapsed < desiredElapsed) return;
 
@@ -33,11 +35,13 @@
       currRotY = lerp(currRotY, targetRotY, 0.1);
       prevTime = time;
     };
-    requestAnimationFrame(frame);
+    frameId = requestAnimationFrame(frame);
 
-    el.addEventListener("mousemove", handleMouseMove);
     return () => {
       el.removeEventListener("mousemove", handleMouseMove);
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
     };
   });
 
