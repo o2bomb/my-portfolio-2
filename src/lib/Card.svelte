@@ -8,10 +8,15 @@
   let initRotY = 0;
 
   let el: HTMLDivElement;
+  // Rotation
   let currRotX = 0;
   let currRotY = 0;
   let targetRotX = initRotX;
   let targetRotY = initRotY;
+  // Glare
+  let targetX = 0;
+  let targetY = 0;
+  let glareOpacity = 0;
 
   onMount(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -21,12 +26,17 @@
       const maxDeg = 10;
       targetRotX = maxDeg * -normY;
       targetRotY = maxDeg * normX;
+
+      targetX = (e.offsetX * 100) / el.offsetWidth;
+      targetY = (e.offsetY * 100) / el.offsetHeight;
+      glareOpacity = 1;
     };
     el.addEventListener("mousemove", handleMouseMove);
 
     const handleMouseLeave = () => {
       targetRotX = initRotX;
       targetRotY = initRotY;
+      glareOpacity = 0;
     };
     el.addEventListener("mouseleave", handleMouseLeave);
 
@@ -61,7 +71,7 @@
 
 <div
   bind:this={el}
-  style="--rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg"
+  style="--rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg; --mouse-x:{targetX}%; --mouse-y:{targetY}%; --glare-opacity:{glareOpacity};"
   class="c-Card {className || ''}"
 >
   <div class="wrap">
@@ -71,6 +81,7 @@
       <div class="effect reveal" class:animate />
     </div>
     <div class="effect flash" class:animate />
+    <div class="effect glare" />
   </div>
 </div>
 
@@ -154,6 +165,18 @@
     right: 0;
     bottom: 0;
     pointer-events: none;
+  }
+
+  .glare {
+    background: radial-gradient(
+      farthest-corner circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.7) 10%,
+      rgba(255, 255, 255, 0.65) 20%,
+      rgba(0, 0, 0, 0.5) 90%
+    );
+    opacity: var(--glare-opacity);
+    mix-blend-mode: overlay;
+    transition: opacity 0.5s ease-out;
   }
 
   .flash {
