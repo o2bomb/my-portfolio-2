@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Card from "./lib/Card.svelte";
+  import Circle from "./lib/Circle.svelte";
   import Sidebar from "./lib/Sidebar/Sidebar.svelte";
 
   let showSidebar = false;
@@ -31,8 +32,12 @@
   open={showSidebar}
 /> -->
 <main class="flex-1">
-  <section class="flex items-center justify-center min-h-screen">
+  <section
+    class="relative flex flex-col space-y-4 items-center justify-center min-h-screen"
+  >
+    <Circle />
     <h1 class="oswald-medium uppercase">Bobby Jones</h1>
+    <p>Lorem ipsum asdlfk jasdfkl jlasdkj asdlfk jdlfkads ladksjf dasf.</p>
   </section>
   <section id="cards" class="relative min-h-screen">
     <div
