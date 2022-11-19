@@ -1,26 +1,62 @@
 <script lang="typescript">
+  import { onMount } from "svelte";
+
   export { className as class };
   export { animate };
   let className: string | undefined;
   let animate: boolean;
+
+  let el: HTMLDivElement;
+  let resultRotX = "0deg";
+  let resultRotY = "0deg";
+
+  onMount(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const normX = (e.offsetX - el.offsetWidth / 2) / (el.offsetWidth / 2);
+      const normY = (e.offsetY - el.offsetHeight / 2) / (el.offsetHeight / 2);
+
+      const maxDeg = 10;
+      resultRotX = `${maxDeg * -normY}deg`;
+      resultRotY = `${maxDeg * normX}deg`;
+    };
+
+    const handleMouseLeave = (e: MouseEvent) => {};
+
+    el.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      el.removeEventListener("mousemove", handleMouseMove);
+    };
+  });
 </script>
 
-<div class="c-Card {className || ''}">
-  <div class="fancy-border" />
-  <div class="content expand" class:animate>
-    <slot />
-    <div class="effect reveal" class:animate />
+<div
+  bind:this={el}
+  style="--rotate-x:{resultRotX}; --rotate-y:{resultRotY}"
+  class="c-Card {className || ''}"
+>
+  <div class="wrap">
+    <div class="fancy-border" />
+    <div class="content expand" class:animate>
+      <slot />
+      <div class="effect reveal" class:animate />
+    </div>
+    <div class="effect flash" class:animate />
   </div>
-  <div class="effect flash" class:animate />
 </div>
 
 <style>
   .c-Card {
+    transform-style: preserve-3d;
+    transform: perspective(100rem);
+  }
+
+  .wrap {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: fit-content;
+    transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
   }
 
   .content {
