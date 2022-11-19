@@ -44,28 +44,48 @@
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[55deg] h-[60vh] w-[60vh] border-2 border-solid border-[#ebad5044]"
     />
-    <Card animate={animateCards} class="!absolute top-[10%] left-[20%]">
+    <Card
+      initRotX={-20}
+      initRotY={20}
+      animate={animateCards}
+      class="!absolute top-[10%] left-[20%]"
+    >
       <img
         src="https://pbs.twimg.com/media/FRGuSJ3VIAAzOAD?format=jpg&name=large"
         alt="demon woman"
         class="w-full max-w-[300px]"
       />
     </Card>
-    <Card animate={animateCards} class="!absolute top-[40%] right-[40%]">
+    <Card
+      initRotX={-5}
+      initRotY={-10}
+      animate={animateCards}
+      class="!absolute top-[20%] right-[35%]"
+    >
       <img
         src="https://pbs.twimg.com/media/FKtEAIZXEAgXd_n?format=jpg&name=large"
         alt="robot"
         class="w-full max-w-[250px]"
       />
     </Card>
-    <Card animate={animateCards} class="!absolute bottom-[10%] left-[10%]">
+    <Card
+      initRotX={15}
+      initRotY={20}
+      animate={animateCards}
+      class="!absolute bottom-[10%] left-[10%]"
+    >
       <img
         src="https://pbs.twimg.com/media/Fb16NExXwAYt1wI?format=jpg&name=4096x4096"
         alt="flying kites"
         class="w-full max-w-[600px]"
       />
     </Card>
-    <Card animate={animateCards} class="!absolute bottom-[20%] right-[10%]">
+    <Card
+      initRotX={-10}
+      initRotY={-20}
+      animate={animateCards}
+      class="!absolute bottom-[20%] right-[10%]"
+    >
       <img
         src="https://pbs.twimg.com/media/FGj1QqpUYAEDfe4?format=jpg&name=4096x4096"
         alt="despair"

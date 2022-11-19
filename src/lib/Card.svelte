@@ -1,16 +1,17 @@
 <script lang="typescript">
   import { onMount } from "svelte";
+  export { className as class, animate, initRotX, initRotY };
 
-  export { className as class };
-  export { animate };
   let className: string | undefined;
   let animate: boolean;
+  let initRotX = 0;
+  let initRotY = 0;
 
   let el: HTMLDivElement;
   let currRotX = 0;
   let currRotY = 0;
-  let targetRotX = 0;
-  let targetRotY = 0;
+  let targetRotX = initRotX;
+  let targetRotY = initRotY;
 
   onMount(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -22,6 +23,12 @@
       targetRotY = maxDeg * normX;
     };
     el.addEventListener("mousemove", handleMouseMove);
+
+    const handleMouseLeave = () => {
+      targetRotX = initRotX;
+      targetRotY = initRotY;
+    };
+    el.addEventListener("mouseleave", handleMouseLeave);
 
     let frameId: number;
     let prevTime = 0;
@@ -39,6 +46,7 @@
 
     return () => {
       el.removeEventListener("mousemove", handleMouseMove);
+      el.removeEventListener("mouseleave", handleMouseLeave);
       if (frameId) {
         cancelAnimationFrame(frameId);
       }
