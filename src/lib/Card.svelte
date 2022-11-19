@@ -98,6 +98,8 @@
     justify-content: center;
     width: fit-content;
     transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+    /* anti-aliasing fix for firefox */
+    outline: 1px solid transparent;
   }
 
   .content {
@@ -121,6 +123,8 @@
     left: -1px;
     right: -1px;
     bottom: -1px;
+    /* anti-aliasing fix for firefox */
+    outline: 1px solid transparent;
   }
 
   .fancy-border::before {
