@@ -9,6 +9,7 @@
 
   let el: HTMLDivElement;
   // Rotation
+  const maxDeg = 10;
   let currRotX = 0;
   let currRotY = 0;
   let targetRotX = initRotX;
@@ -16,27 +17,20 @@
   // Glare
   let targetX = 0;
   let targetY = 0;
-  let glareOpacity = 0;
 
   onMount(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const normX = (e.offsetX - el.offsetWidth / 2) / (el.offsetWidth / 2);
       const normY = (e.offsetY - el.offsetHeight / 2) / (el.offsetHeight / 2);
 
-      const maxDeg = 10;
       targetRotX = maxDeg * -normY;
       targetRotY = maxDeg * normX;
-
-      targetX = (e.offsetX * 100) / el.offsetWidth;
-      targetY = (e.offsetY * 100) / el.offsetHeight;
-      glareOpacity = 1;
     };
     el.addEventListener("mousemove", handleMouseMove);
 
     const handleMouseLeave = () => {
       targetRotX = initRotX;
       targetRotY = initRotY;
-      glareOpacity = 0;
     };
     el.addEventListener("mouseleave", handleMouseLeave);
 
@@ -50,6 +44,8 @@
 
       currRotX = lerp(currRotX, targetRotX, 0.1);
       currRotY = lerp(currRotY, targetRotY, 0.1);
+      targetX = ((currRotY + maxDeg) * 100) / (maxDeg * 2);
+      targetY = ((-currRotX + maxDeg) * 100) / (maxDeg * 2);
       prevTime = time;
     };
     frameId = requestAnimationFrame(frame);
@@ -71,7 +67,7 @@
 
 <div
   bind:this={el}
-  style="--rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg; --mouse-x:{targetX}%; --mouse-y:{targetY}%; --glare-opacity:{glareOpacity};"
+  style="--rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg; --mouse-x:{targetX}%; --mouse-y:{targetY}%;"
   class="c-Card {className || ''}"
 >
   <div class="wrap">
@@ -81,7 +77,7 @@
       <div class="effect reveal" class:animate />
     </div>
     <div class="effect flash" class:animate />
-    <div class="effect glare" />
+    <div class="effect glare" class:animate />
   </div>
 </div>
 
@@ -114,6 +110,14 @@
   }
   .expand.animate {
     animation: expand 0.5s forwards;
+  }
+  @keyframes expand {
+    0% {
+      clip-path: inset(50% 0% 50% 0%);
+    }
+    100% {
+      clip-path: inset(0% 0% 0% 0%);
+    }
   }
 
   .fancy-border {
@@ -178,9 +182,19 @@
       rgba(255, 255, 255, 0.65) 20%,
       rgba(0, 0, 0, 0.5) 90%
     );
-    opacity: var(--glare-opacity);
     mix-blend-mode: overlay;
-    transition: opacity 0.5s ease-out;
+    opacity: 0;
+  }
+  .glare.animate {
+    animation: fade-in 0.5s 0.9s forwards;
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .flash {
@@ -190,32 +204,6 @@
   .flash.animate {
     animation: flash 0.9s 0.3s forwards;
   }
-
-  .reveal {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .reveal.animate {
-    animation: reveal 0.15s 0.3s forwards;
-  }
-
-  @keyframes expand {
-    0% {
-      clip-path: inset(50% 0% 50% 0%);
-    }
-    100% {
-      clip-path: inset(0% 0% 0% 0%);
-    }
-  }
-
-  @keyframes reveal {
-    0% {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-    100% {
-      background-color: transparent;
-    }
-  }
-
   @keyframes flash {
     0% {
       opacity: 0;
@@ -225,6 +213,21 @@
     }
     100% {
       opacity: 0;
+    }
+  }
+
+  .reveal {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .reveal.animate {
+    animation: reveal 0.15s 0.3s forwards;
+  }
+  @keyframes reveal {
+    0% {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    100% {
+      background-color: transparent;
     }
   }
 </style>
