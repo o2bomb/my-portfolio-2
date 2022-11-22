@@ -1,7 +1,7 @@
 <script lang="typescript">
 </script>
 
-<div class="c-Circle" />
+<div class="c-Circle bg-zinc-800" />
 
 <style>
   .c-Circle {
@@ -13,6 +13,5 @@
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background-color: #151515;
   }
 </style>
