@@ -4,8 +4,10 @@
 <div class="c-ExperienceItem">
   <div>
     <div class="flex">
-      <h3 class="company">Ninja Syndicate (formerly Ninja Software)</h3>
-      <p class="date">Mar 2021 - <strong>Present</strong></p>
+      <h3 class="company">
+        Ninja Syndicate (formerly Ninja Software)
+        <span class="date">Mar 2021 - <strong>Present</strong></span>
+      </h3>
     </div>
     <p class="role">Fullstack Developer</p>
     <div class="project">
@@ -27,11 +29,13 @@
       </ul>
     </div>
   </div>
+  <div class="spacer" />
   <a>View Projects →</a>
 </div>
 
 <style>
   .c-ExperienceItem {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
@@ -42,11 +46,12 @@
   }
 
   .flex {
-    display: flex;
+    display: inline-flex;
     align-items: baseline;
   }
 
   .company {
+    max-width: 600px;
     margin-bottom: 0.3rem;
     margin-right: 0.5rem;
     font-size: 1.2rem;
@@ -61,7 +66,9 @@
   }
 
   .date {
+    font-weight: 400;
     color: #52525b;
+    white-space: nowrap;
   }
 
   .project .project-title span {
@@ -72,8 +79,29 @@
   .achievements li {
     padding-left: 0.7rem;
     background-image: linear-gradient(to bottom, #18181b, #18181b);
-    background-position: 2px 5px;
+    background-position: 2px 4px;
     background-size: 3px 1rem;
     background-repeat: no-repeat;
+  }
+
+  .spacer {
+    min-height: 1rem;
+  }
+
+  a {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 800px) {
+    .c-ExperienceItem {
+      flex-direction: column;
+    }
+
+    a {
+      position: static;
+    }
   }
 </style>
