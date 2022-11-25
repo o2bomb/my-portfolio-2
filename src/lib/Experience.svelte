@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
   import ExperienceItem from "./components/ExperienceItem.svelte";
 </script>
 

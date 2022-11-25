@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
 </script>
 
 <div class="c-Circle bg-zinc-800" />

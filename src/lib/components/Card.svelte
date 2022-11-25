@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
   import { onMount } from "svelte";
   export { className as class, animate, initRotX, initRotY };
 

@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
   import { sineOut } from "svelte/easing";
   import type { EasingFunction, TransitionConfig } from "svelte/transition";
   import SidebarContent from "./SidebarContent.svelte";
