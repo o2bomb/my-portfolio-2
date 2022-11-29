@@ -42,6 +42,6 @@
 
   h1,
   p {
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
   }
 </style>

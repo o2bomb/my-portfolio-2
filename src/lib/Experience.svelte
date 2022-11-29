@@ -1,13 +1,31 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import ExperienceItem from "./components/ExperienceItem.svelte";
+
+  let animateItems = false;
+  onMount(() => {
+    let observer = new IntersectionObserver(
+      (entry) => {
+        if (entry.length === 0) return;
+        if (!entry[0].isIntersecting) return;
+        animateItems = true;
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    const target = document.getElementById("experience");
+    observer.observe(target);
+  });
 </script>
 
-<section class="c-Experience">
+<section id="experience" class="c-Experience">
   <h2 class="oswald-medium">Experience</h2>
-  <ExperienceItem />
-  <ExperienceItem />
-  <ExperienceItem />
-  <ExperienceItem />
+  <ExperienceItem animate={animateItems} />
+  <ExperienceItem animate={animateItems} />
+  <ExperienceItem animate={animateItems} />
+  <ExperienceItem animate={animateItems} />
 </section>
 
 <style>

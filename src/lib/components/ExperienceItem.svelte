@@ -1,7 +1,10 @@
 <script lang="ts">
+  export { animate };
+
+  let animate: boolean;
 </script>
 
-<div class="c-ExperienceItem">
+<div class="c-ExperienceItem" class:animate>
   <div>
     <div class="flex">
       <h3 class="company">
@@ -39,10 +42,32 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
+    overflow-y: hidden;
   }
 
-  .c-ExperienceItem:not(:last-child) {
-    border-bottom: 1px solid #d4d4d8;
+  .c-ExperienceItem::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #18181b;
+  }
+
+  .c-ExperienceItem.animate::after {
+    animation: scale-out 1s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+  }
+  @keyframes scale-out {
+    0% {
+      transform: translateY(0);
+      background-color: #18181b;
+    }
+    100% {
+      transform: translateY(calc(100% - 1px));
+      background-color: #d4d4d8;
+    }
   }
 
   .flex {
