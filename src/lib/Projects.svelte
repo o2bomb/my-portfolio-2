@@ -21,16 +21,7 @@
   });
 </script>
 
-<section id="cards" class=".c-Projects relative min-h-screen">
-  <div
-    class="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45 h-screen w-[100vh] border-2 border-solid border-[#ebad5088]"
-  />
-  <div
-    class="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[50deg] h-[80vh] w-[80vh] border-2 border-solid border-[#ebad5066]"
-  />
-  <div
-    class="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[55deg] h-[60vh] w-[60vh] border-2 border-solid border-[#ebad5044]"
-  />
+<section id="cards" class="c-Projects">
   <Card
     initRotX={-20}
     initRotY={20}
@@ -83,5 +74,12 @@
 
 <style>
   .c-Projects {
+    position: relative;
+    min-height: 100vh;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
   }
 </style>
