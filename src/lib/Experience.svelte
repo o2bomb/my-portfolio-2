@@ -21,7 +21,9 @@
 </script>
 
 <section id="experience" class="c-Experience">
-  <h2 class="oswald-medium">Experience</h2>
+  <div class="header-container">
+    <h2 class="oswald-medium" class:animate={animateItems}>Experience</h2>
+  </div>
   <ExperienceItem animate={animateItems} />
   <ExperienceItem animate={animateItems} />
   <ExperienceItem animate={animateItems} />
@@ -37,11 +39,28 @@
     color: #18181b;
   }
 
+  .header-container {
+    overflow-y: hidden;
+  }
+
   h2 {
     font: var(--font-oswald-medium);
     font-size: 3rem;
     text-transform: uppercase;
     padding: 2rem;
     padding-bottom: 0;
+    transform: translateY(100%);
+  }
+
+  h2.animate {
+    animation: slide-up 1s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+  }
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 </style>

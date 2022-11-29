@@ -53,16 +53,16 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #18181b;
+    background-color: #e4e4e7;
   }
 
   .c-ExperienceItem.animate::after {
-    animation: scale-out 1s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+    animation: scale-out 1s 0.5s cubic-bezier(0.83, 0, 0.17, 1) forwards;
   }
   @keyframes scale-out {
     0% {
       transform: translateY(0);
-      background-color: #18181b;
+      background-color: #e4e4e7;
     }
     100% {
       transform: translateY(calc(100% - 1px));
