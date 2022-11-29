@@ -1,9 +1,18 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  export { className as class, animate, initRotX, initRotY };
+  export {
+    className as class,
+    animate,
+    initPosX,
+    initPosY,
+    initRotX,
+    initRotY,
+  };
 
   let className: string | undefined;
   let animate: boolean;
+  let initPosX = 0;
+  let initPosY = 0;
   let initRotX = 0;
   let initRotY = 0;
 
