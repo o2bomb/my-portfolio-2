@@ -42,7 +42,16 @@
       </Card>
     </div>
     <div class="card">
-      <Card class="card" initRotX={15} initRotY={20} animate={animateCards}>
+      <Card class="card" initRotX={5} initRotY={0} animate={animateCards}>
+        <div class="aspect large" />
+        <img
+          src="https://pbs.twimg.com/media/FKbdq1LWYAcX11l?format=jpg&name=4096x4096"
+          alt="woman"
+        />
+      </Card>
+    </div>
+    <div class="card">
+      <Card class="card" initRotX={15} initRotY={-20} animate={animateCards}>
         <div class="aspect" />
         <img
           src="https://pbs.twimg.com/media/FfLVrPJUAAEaE8L?format=jpg&name=large"
@@ -51,7 +60,7 @@
       </Card>
     </div>
     <div class="card">
-      <Card class="card" initRotX={-10} initRotY={-20} animate={animateCards}>
+      <Card class="card" initRotX={10} initRotY={20} animate={animateCards}>
         <div class="aspect" />
         <img
           src="https://pbs.twimg.com/media/FGj1QqpUYAEDfe4?format=jpg&name=4096x4096"
@@ -59,15 +68,6 @@
         />
       </Card>
     </div>
-    <!-- <div class="card">
-      <Card class="card" initRotX={-10} initRotY={-20} animate={animateCards}>
-        <div class="aspect" />
-        <img
-          src="https://pbs.twimg.com/media/FKbdq1LWYAcX11l?format=jpg&name=4096x4096"
-          alt="woman"
-        />
-      </Card>
-    </div> -->
   </div>
 </section>
 
@@ -99,26 +99,32 @@
 
   .card:nth-child(1) {
     transform: translate(
-      calc(max(100vw - 400px, 0px) * -0.1),
-      calc(max(100vw - 400px, 0px) * 0)
+      calc(max(100vw - 400px, 0px) * 0),
+      calc(max(100vw - 400px, 0px) * 0.03)
     );
   }
   .card:nth-child(2) {
-    transform: translate(
-      calc(max(100vw - 400px, 0px) * -0.1),
-      calc(max(100vw - 400px, 0px) * 0.01)
-    );
-  }
-  .card:nth-child(3) {
     transform: translate(
       calc(max(100vw - 400px, 0px) * 0),
       calc(max(100vw - 400px, 0px) * 0.03)
     );
   }
+  .card:nth-child(3) {
+    transform: translate(
+      calc(max(100vw - 400px, 0px) * 0.22),
+      calc(max(100vw - 400px, 0px) * 0)
+    );
+  }
   .card:nth-child(4) {
     transform: translate(
       calc(max(100vw - 400px, 0px) * 0),
-      calc(max(100vw - 400px, 0px) * 0.02)
+      calc(max(100vw - 400px, 0px) * 0.2)
+    );
+  }
+  .card:nth-child(5) {
+    transform: translate(
+      calc(max(100vw - 400px, 0px) * 0),
+      calc(max(100vw - 400px, 0px) * 0)
     );
   }
 
@@ -134,7 +140,10 @@
   }
 
   .aspect {
-    width: calc(min(30rem, 100vw));
+    width: calc(min(20rem, 100vw));
     padding-bottom: 56.25%;
+  }
+  .aspect.large {
+    width: calc(min(30rem, 100vw));
   }
 </style>

@@ -1,6 +1,5 @@
 <script lang="ts">
   import Button from "./lib/components/Button.svelte";
-  import MyThree from "./lib/components/MyThree.svelte";
   import Sidebar from "./lib/components/Sidebar/Sidebar.svelte";
   import Experience from "./lib/Experience.svelte";
   import Projects from "./lib/Projects.svelte";
@@ -19,7 +18,7 @@
   <section
     class="relative flex flex-col space-y-4 items-center justify-center min-h-screen"
   >
-    <MyThree />
+    <!-- <MyThree /> -->
     <h1 class="oswald-medium uppercase">Bobby Jones</h1>
     <p>Lorem ipsum asdlfk jasdfkl jlasdkj asdlfk jdlfkads ladksjf dasf.</p>
     <div>
