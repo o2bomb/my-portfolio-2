@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Card from "./components/Card.svelte";
+  import Card from "./components/ProjectCard.svelte";
 
   let animateCards = false;
 
@@ -26,30 +26,38 @@
     <h2 class="oswald-medium" class:animate={animateCards}>Projects</h2>
   </div>
   <div class="container">
-    <div class="card">
-      <Card class="card" initRotX={-20} initRotY={20} animate={animateCards}>
-        <div class="aspect" />
-        <img src="my work/xsyn/1.png" alt="demon woman" />
-      </Card>
-    </div>
-    <div class="card">
-      <Card class="card" initRotX={-5} initRotY={-10} animate={animateCards}>
-        <div class="aspect" />
-        <img src="my work/supremacy/2.png" alt="robot" />
-      </Card>
-    </div>
-    <div class="card">
-      <Card class="card" initRotX={15} initRotY={20} animate={animateCards}>
-        <div class="aspect" />
-        <img src="my work/weareninja/1.png" alt="woman with elephants" />
-      </Card>
-    </div>
-    <div class="card">
-      <Card class="card" initRotX={10} initRotY={-20} animate={animateCards}>
-        <div class="aspect" />
-        <img src="my work/art/1.png" alt="despair" />
-      </Card>
-    </div>
+    <Card
+      imageSrc="my work/xsyn/1.png"
+      imageAlt=""
+      offsetYFactor={-0.08}
+      initRotX={-20}
+      initRotY={20}
+      animate={animateCards}
+    />
+    <Card
+      imageSrc="my work/supremacy/2.png"
+      imageAlt=""
+      offsetYFactor={-0.08}
+      initRotX={-5}
+      initRotY={-10}
+      animate={animateCards}
+    />
+    <Card
+      imageSrc="my work/weareninja/1.png"
+      imageAlt=""
+      offsetYFactor={0.08}
+      initRotX={15}
+      initRotY={20}
+      animate={animateCards}
+    />
+    <Card
+      imageSrc="my work/art/1.png"
+      imageAlt=""
+      offsetYFactor={0.08}
+      initRotX={10}
+      initRotY={-20}
+      animate={animateCards}
+    />
   </div>
 </section>
 
@@ -110,50 +118,6 @@
     max-width: 1400px;
   }
 
-  .card {
-    width: fit-content;
-  }
-  .card:nth-child(1) {
-    transform: translate(
-      calc(max(100vw - 400px, 0px) * 0),
-      calc(max(100vw - 400px, 0px) * -0.08)
-    );
-  }
-  .card:nth-child(2) {
-    transform: translate(
-      calc(max(100vw - 400px, 0px) * 0),
-      calc(max(100vw - 400px, 0px) * -0.08)
-    );
-  }
-  .card:nth-child(3) {
-    transform: translate(
-      calc(max(100vw - 400px, 0px) * 0),
-      calc(max(100vw - 400px, 0px) * 0.08)
-    );
-  }
-  .card:nth-child(4) {
-    transform: translate(
-      calc(max(100vw - 400px, 0px) * 0),
-      calc(max(100vw - 400px, 0px) * 0.08)
-    );
-  }
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .aspect {
-    width: calc(min(var(--card-width), 100vw));
-    padding-bottom: 56.25%;
-  }
-
   @media (max-width: 1000px) {
     h2 {
       font-size: 6rem;
@@ -161,10 +125,6 @@
 
     .container {
       grid-template-columns: repeat(2, minmax(calc(min(20rem, 100vw)), 1fr));
-    }
-    .aspect {
-      width: calc(min(20rem, 100vw));
-      padding-bottom: 56.25%;
     }
   }
 
@@ -185,14 +145,6 @@
       display: flex;
       flex-direction: column;
       width: auto;
-    }
-    .card {
-      transform: none !important;
-    }
-
-    .aspect {
-      width: calc(min(30rem, 100vw));
-      padding-bottom: 56.25%;
     }
   }
 </style>

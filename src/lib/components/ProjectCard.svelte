@@ -1,18 +1,20 @@
 <script lang="ts">
   import { onMount } from "svelte";
   export {
-    className as class,
     animate,
-    initPosX,
-    initPosY,
+    imageSrc,
+    imageAlt,
+    offsetXFactor,
+    offsetYFactor,
     initRotX,
     initRotY,
   };
 
-  let className: string | undefined;
   let animate: boolean;
-  let initPosX = 0;
-  let initPosY = 0;
+  let imageSrc: string;
+  let imageAlt: string;
+  let offsetXFactor = 0;
+  let offsetYFactor = 0;
   let initRotX = 0;
   let initRotY = 0;
 
@@ -76,21 +78,30 @@
 
 <div
   bind:this={el}
-  style="--rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg; --mouse-x:{targetX}%; --mouse-y:{targetY}%;"
-  class="c-Card {className || ''}"
+  class="offset"
+  style="--offset-x-factor:{offsetXFactor}; --offset-y-factor:{offsetYFactor}; --rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg; --mouse-x:{targetX}%; --mouse-y:{targetY}%;"
 >
-  <div class="wrap">
-    <div class="fancy-border" />
-    <div class="content expand" class:animate>
-      <slot />
-      <div class="effect reveal" class:animate />
+  <div class="c-Card">
+    <div class="wrap">
+      <div class="fancy-border" />
+      <div class="content expand" class:animate>
+        <img src={imageSrc} alt={imageAlt} />
+        <div class="effect reveal" class:animate />
+      </div>
+      <div class="effect flash" class:animate />
+      <div class="effect glare" class:animate />
     </div>
-    <div class="effect flash" class:animate />
-    <div class="effect glare" class:animate />
   </div>
 </div>
 
 <style>
+  .offset {
+    transform: translate(
+      calc(max(100vw - 400px, 0px) * var(--offset-x-factor)),
+      calc(max(100vw - 400px, 0px) * var(--offset-y-factor))
+    );
+  }
+
   .c-Card {
     transform-style: preserve-3d;
     transform: perspective(100rem);
