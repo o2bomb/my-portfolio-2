@@ -83,7 +83,7 @@
 >
   <div class="c-Card">
     <div class="wrap">
-      <div class="fancy-border" />
+      <div class="fancy-border" class:animate />
       <div class="content expand" class:animate>
         <img src={imageSrc} alt={imageAlt} />
         <div class="effect reveal" class:animate />
@@ -150,6 +150,12 @@
     bottom: -1px;
     /* anti-aliasing fix for firefox */
     outline: 1px solid transparent;
+
+    transition: opacity 0.5s 0.5s ease-out;
+    opacity: 0;
+  }
+  .fancy-border.animate {
+    opacity: 1;
   }
 
   .fancy-border::before {
