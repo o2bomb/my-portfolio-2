@@ -16,12 +16,12 @@
       }
     );
 
-    const target = document.getElementById("cards");
+    const target = document.getElementById("projects");
     observer.observe(target);
   });
 </script>
 
-<section id="cards" class="c-Projects">
+<section id="projects" class="c-Projects">
   <div class="header-container">
     <h2 class="oswald-medium" class:animate={animateCards}>Projects</h2>
   </div>
