@@ -45,6 +45,22 @@
     overflow-y: hidden;
   }
 
+  .c-ExperienceItem:not(:last-child) {
+    border-bottom: 1px solid transparent;
+  }
+  .c-ExperienceItem:not(:last-child).animate {
+    animation: show-border 1s 0.5s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+  }
+
+  @keyframes show-border {
+    0% {
+      border-bottom: 1px solid transparent;
+    }
+    100% {
+      border-bottom: 1px solid #d4d4d8;
+    }
+  }
+
   .c-ExperienceItem::after {
     content: "";
     position: absolute;
@@ -57,15 +73,15 @@
   }
 
   .c-ExperienceItem.animate::after {
-    animation: scale-out 1s 0.5s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+    animation: slide-down 1s 0.5s cubic-bezier(0.83, 0, 0.17, 1) forwards;
   }
-  @keyframes scale-out {
+  @keyframes slide-down {
     0% {
       transform: translateY(0);
       background-color: #e4e4e7;
     }
     100% {
-      transform: translateY(calc(100% - 1px));
+      transform: translateY(102%);
       background-color: #d4d4d8;
     }
   }
