@@ -83,23 +83,25 @@
   class="offset"
   style="--offset-x-factor:{offsetXFactor}; --offset-y-factor:{offsetYFactor}; --rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg; --mouse-x:{targetX}%; --mouse-y:{targetY}%;"
 >
-  <div class="c-Card">
-    <div class="wrap">
-      <div class="hover-container">
-        <div class="hover">
-          <p>{name}</p>
-          <p>Learn More →</p>
+  <a href="https://google.com">
+    <div class="c-Card">
+      <div class="wrap">
+        <div class="hover-container" tabindex="-1">
+          <div class="hover">
+            <p>{name}</p>
+            <p>Learn More →</p>
+          </div>
         </div>
+        <div class="fancy-border" class:animate />
+        <div class="content expand" class:animate>
+          <img src={imageSrc} alt={imageAlt} />
+          <div class="effect reveal" class:animate />
+        </div>
+        <div class="effect flash" class:animate />
+        <div class="effect glare" class:animate />
       </div>
-      <div class="fancy-border" class:animate />
-      <div class="content expand" class:animate>
-        <img src={imageSrc} alt={imageAlt} />
-        <div class="effect reveal" class:animate />
-      </div>
-      <div class="effect flash" class:animate />
-      <div class="effect glare" class:animate />
     </div>
-  </div>
+  </a>
 </div>
 
 <style>
