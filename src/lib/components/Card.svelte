@@ -94,6 +94,7 @@
   .c-Card {
     transform-style: preserve-3d;
     transform: perspective(100rem);
+    transition: transform 0.2s ease-out;
   }
 
   .wrap {
@@ -168,6 +169,9 @@
     background-color: #ebad50;
   }
 
+  .c-Card:hover {
+    transform: perspective(100rem) scale(1.2);
+  }
   .c-Card:hover .fancy-border::before {
     transform: rotate(0);
   }

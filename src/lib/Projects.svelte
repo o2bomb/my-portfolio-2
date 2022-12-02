@@ -29,37 +29,25 @@
     <div class="card">
       <Card class="card" initRotX={-20} initRotY={20} animate={animateCards}>
         <div class="aspect" />
-        <img
-          src="https://pbs.twimg.com/media/FRGuSJ3VIAAzOAD?format=jpg&name=large"
-          alt="demon woman"
-        />
+        <img src="my work/xsyn/1.png" alt="demon woman" />
       </Card>
     </div>
     <div class="card">
       <Card class="card" initRotX={-5} initRotY={-10} animate={animateCards}>
         <div class="aspect" />
-        <img
-          src="https://pbs.twimg.com/media/FKtEAIZXEAgXd_n?format=jpg&name=large"
-          alt="robot"
-        />
+        <img src="my work/supremacy/2.png" alt="robot" />
       </Card>
     </div>
     <div class="card">
       <Card class="card" initRotX={15} initRotY={20} animate={animateCards}>
         <div class="aspect" />
-        <img
-          src="https://pbs.twimg.com/media/FfLVrPJUAAEaE8L?format=jpg&name=large"
-          alt="woman with elephants"
-        />
+        <img src="my work/weareninja/1.png" alt="woman with elephants" />
       </Card>
     </div>
     <div class="card">
       <Card class="card" initRotX={10} initRotY={-20} animate={animateCards}>
         <div class="aspect" />
-        <img
-          src="https://pbs.twimg.com/media/FGj1QqpUYAEDfe4?format=jpg&name=4096x4096"
-          alt="despair"
-        />
+        <img src="my work/art/1.png" alt="despair" />
       </Card>
     </div>
   </div>
