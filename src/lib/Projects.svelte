@@ -27,22 +27,25 @@
   </div>
   <div class="container">
     <Card
+      name="XSYN"
       imageSrc="my work/xsyn/1.png"
-      imageAlt=""
+      imageAlt="XSYN"
       offsetYFactor={-0.08}
       initRotX={-20}
       initRotY={20}
       animate={animateCards}
     />
     <Card
+      name="Supremacy: Battle Arena"
       imageSrc="my work/supremacy/2.png"
-      imageAlt=""
+      imageAlt="Supremacy: Battle Arena"
       offsetYFactor={-0.08}
       initRotX={-5}
       initRotY={-10}
       animate={animateCards}
     />
     <Card
+      name="We Are Ninja"
       imageSrc="my work/weareninja/1.png"
       imageAlt=""
       offsetYFactor={0.08}
@@ -51,6 +54,7 @@
       animate={animateCards}
     />
     <Card
+      name="Art Showcase 2020"
       imageSrc="my work/art/1.png"
       imageAlt=""
       offsetYFactor={0.08}

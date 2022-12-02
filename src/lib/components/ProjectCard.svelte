@@ -1,15 +1,17 @@
 <script lang="ts">
   import { onMount } from "svelte";
   export {
-    animate,
+    name,
     imageSrc,
     imageAlt,
     offsetXFactor,
     offsetYFactor,
     initRotX,
     initRotY,
+    animate,
   };
 
+  let name: string;
   let animate: boolean;
   let imageSrc: string;
   let imageAlt: string;
@@ -83,6 +85,12 @@
 >
   <div class="c-Card">
     <div class="wrap">
+      <div class="hover-container">
+        <div class="hover">
+          <p>{name}</p>
+          <p>Learn More →</p>
+        </div>
+      </div>
       <div class="fancy-border" class:animate />
       <div class="content expand" class:animate>
         <img src={imageSrc} alt={imageAlt} />
@@ -117,6 +125,28 @@
     transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
     /* anti-aliasing fix for firefox */
     outline: 1px solid transparent;
+  }
+
+  .hover-container {
+    z-index: 1;
+    overflow-y: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .hover {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #18181baa;
+    backdrop-filter: blur(2px);
+    transform: translateY(100%);
+    transition: transform 0.2s ease-out;
+  }
+  .c-Card:hover .hover {
+    transform: translateY(0);
   }
 
   .content {
