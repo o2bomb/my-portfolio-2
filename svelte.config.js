@@ -6,12 +6,7 @@ export default {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // https://threlte.xyz/getting-started#configuration
   // for more information about preprocessors
-  preprocess: seqPreprocessor([
-    sveltePreprocess({
-      postcss: true,
-    }),
-    preprocessThrelte(),
-  ]),
+  preprocess: seqPreprocessor([sveltePreprocess(), preprocessThrelte()]),
   ssr: {
     noExternal: ["three", "troika-three-text"],
   },

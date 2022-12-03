@@ -15,11 +15,9 @@
   open={showSidebar}
 /> -->
 <main class="flex-1">
-  <section
-    class="relative flex flex-col space-y-4 items-center justify-center min-h-screen"
-  >
+  <section id="hero">
     <!-- <MyThree /> -->
-    <h1 class="oswald-medium uppercase">Bobby Jones</h1>
+    <h1 class="oswald-medium">Bobby Jones</h1>
     <p>Lorem ipsum asdlfk jasdfkl jlasdkj asdlfk jdlfkads ladksjf dasf.</p>
     <div>
       <Button>Projects</Button>
@@ -33,10 +31,21 @@
 </main>
 
 <style>
-  .card:nth-of-type(1) {
-    position: absolute;
-    top: 10%;
-    left: 30%;
+  #hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  #hero > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    text-transform: uppercase;
   }
 
   h1,
