@@ -110,7 +110,7 @@ body {
 }
 
 .cut-in {
-    animation: cut-in 1.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation: cut-in 2s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 @keyframes cut-in {
     0% {

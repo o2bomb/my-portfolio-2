@@ -1,13 +1,13 @@
 <script lang="ts">
-    import SidebarContent from "./SidebarContent.svelte";
-
     export let open = false;
 </script>
 
 <div class="wrap" class:open>
     <div class="c-Sidebar">
-        <div class="content">
-            <SidebarContent />
+        <div class={`content ${open ? "open" : "close"}`}>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/sverdle">Sverdle</a>
         </div>
     </div>
 </div>
@@ -30,11 +30,28 @@
 
     .c-Sidebar {
         overflow-x: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         background-color: #1f1f1f;
     }
 
     .content {
-        width: calc(min(300px, 100vw));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .content.open {
+        animation: fade-in 0.5s 0.5s ease-out backwards;
+    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 </style>

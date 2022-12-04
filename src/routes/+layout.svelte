@@ -1,6 +1,6 @@
 <script>
-    import Sidebar from "$lib/components/Sidebar/Sidebar.svelte";
-    import SidebarButton from "$lib/components/Sidebar/SidebarButton.svelte";
+    import Nav from "$lib/components/Sidebar/Nav.svelte";
+    import NavButton from "$lib/components/Sidebar/NavButton.svelte";
     import "../global.css";
     import "../reset.css";
 
@@ -8,13 +8,13 @@
 </script>
 
 <div class="app">
-    <SidebarButton
+    <NavButton
         onclick={() => {
             showSidebar = !showSidebar;
         }}
         open={showSidebar}
     />
-    <Sidebar open={showSidebar} />
+    <Nav open={showSidebar} />
 
     <main class:sidebar={showSidebar}>
         <slot />
