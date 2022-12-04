@@ -34,7 +34,7 @@
         flex: 1;
         margin-left: 0;
         background-color: #18181b;
-        transition: margin-left 0.5s ease-out;
+        transition: margin-left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     main.sidebar {
