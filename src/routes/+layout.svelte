@@ -14,7 +14,7 @@
         }}
         open={showSidebar}
     />
-    <Sidebar />
+    <Sidebar open={showSidebar} />
 
     <main class:sidebar={showSidebar}>
         <slot />
@@ -30,14 +30,7 @@
     }
 
     main {
-        z-index: 1;
         flex: 1;
-        margin-left: 0;
         background-color: #18181b;
-        transition: margin-left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    main.sidebar {
-        margin-left: 300px;
     }
 </style>

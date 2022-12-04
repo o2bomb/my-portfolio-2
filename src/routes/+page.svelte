@@ -11,7 +11,7 @@
 
 <section id="hero">
     <!-- <MyThree /> -->
-    <h1 class="oswald-medium">Bobby Jones</h1>
+    <h1 class="oswald-medium cut-in">Bobby Jones</h1>
     <p>Lorem ipsum asdlfk jasdfkl jlasdkj asdlfk jdlfkads ladksjf dasf.</p>
     <div>
         <Button>Projects</Button>
