@@ -1,68 +1,31 @@
 <script lang="ts">
-  import { sineOut } from "svelte/easing";
-  import type { EasingFunction, TransitionConfig } from "svelte/transition";
-  import SidebarContent from "./SidebarContent.svelte";
+    import SidebarContent from "./SidebarContent.svelte";
 
-  export let open = false;
-  export let unmountOnExit = false;
-
-  interface NavbarSlideParams {
-    delay?: number;
-    duration?: number;
-    easing?: EasingFunction;
-  }
-  type NavbarSlideFunc = (
-    node: Element,
-    params?: NavbarSlideParams
-  ) => TransitionConfig;
-  const navbarSlide: NavbarSlideFunc = (
-    node,
-    { delay = 0, duration = 500, easing = sineOut }
-  ) => {
-    const width = node.getBoundingClientRect().width;
-
-    return {
-      delay,
-      duration,
-      css: (t) => `flex-basis: ${width * t}px`,
-      easing,
-    };
-  };
+    export let open = false;
 </script>
 
-{#if unmountOnExit}
-  {#if open}
-    <div class="c-Sidebar" transition:navbarSlide>
-      <div class="content">
-        <SidebarContent />
-      </div>
+<div class="wrap">
+    <div class="c-Sidebar">
+        <div class="content">
+            <SidebarContent />
+        </div>
     </div>
-  {/if}
-{:else}
-  <div class="c-Sidebar transition" class:open>
-    <div class="content">
-      <SidebarContent />
-    </div>
-  </div>
-{/if}
+</div>
 
 <style>
-  .c-Sidebar {
-    overflow-x: hidden;
-    align-self: stretch;
-    background-color: #1f1f1f;
-  }
+    .wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 
-  .content {
-    width: calc(min(300px, 100vw));
-  }
+    .c-Sidebar {
+        overflow-x: hidden;
+        height: 100vh;
+        background-color: #1f1f1f;
+    }
 
-  .transition {
-    flex-basis: 0;
-    transition: flex-basis 0.5s ease-out;
-  }
-
-  .open {
-    flex-basis: 300px;
-  }
+    .content {
+        width: calc(min(300px, 100vw));
+    }
 </style>

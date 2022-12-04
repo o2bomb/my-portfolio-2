@@ -12,7 +12,7 @@
 <style>
     .c-SidebarButton {
         z-index: 100;
-        position: absolute;
+        position: fixed;
         top: 1rem;
         left: 1rem;
         display: flex;
@@ -20,6 +20,7 @@
         justify-content: center;
         height: 40px;
         width: 40px;
+        mix-blend-mode: difference;
     }
 
     .c-SidebarButton .line {
