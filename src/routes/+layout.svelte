@@ -1,10 +1,13 @@
 <script>
+    import { navigating } from "$app/stores";
     import Nav from "$lib/components/Sidebar/Nav.svelte";
     import NavButton from "$lib/components/Sidebar/NavButton.svelte";
     import "../global.css";
     import "../reset.css";
 
     let showSidebar = false;
+
+    $: if ($navigating === null) showSidebar = false;
 </script>
 
 <div class="app">

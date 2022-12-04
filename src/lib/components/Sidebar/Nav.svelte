@@ -54,4 +54,12 @@
             opacity: 1;
         }
     }
+
+    a {
+        font: var(--font-worksans-semibold);
+        font-size: 3rem;
+    }
+    a:not(:last-child) {
+        margin-bottom: 1rem;
+    }
 </style>
