@@ -2,8 +2,8 @@
     export let open = false;
 </script>
 
-<div class="wrap" class:open>
-    <div class="c-Sidebar">
+<div class={`wrap ${open ? "open" : "close"}`}>
+    <div class="c-Sidebar" class:open>
         <div class={`content ${open ? "open" : "close"}`}>
             <a href="/">Home</a>
             <a href="/about">About</a>
@@ -20,12 +20,6 @@
         left: 0;
         right: 0;
         bottom: 0;
-        clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
-        transition: clip-path 1s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .wrap.open {
-        clip-path: polygon(0% 0%, 200% 0%, 0% 200%);
     }
 
     .c-Sidebar {
@@ -35,6 +29,27 @@
         justify-content: center;
         height: 100%;
         background-color: #1f1f1f;
+        animation: cut-out 1s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes cut-out {
+        0% {
+            clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
+        }
+        100% {
+            clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+        }
+    }
+    .c-Sidebar.open {
+        animation: cut-in 1s cubic-bezier(0.22, 1, 0.36, 1);
+        clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
+    }
+    @keyframes cut-in {
+        0% {
+            clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
+        }
+        100% {
+            clip-path: polygon(0% 0%, 200% 0%, 0% 200%);
+        }
     }
 
     .content {
@@ -42,6 +57,15 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        animation: fade-out 0.1s ease-out forwards;
+    }
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
     }
     .content.open {
         animation: fade-in 0.5s 0.5s ease-out backwards;
