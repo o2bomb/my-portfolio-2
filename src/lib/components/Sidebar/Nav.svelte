@@ -69,26 +69,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        animation: fade-out 0.1s ease-out forwards;
-    }
-    @keyframes fade-out {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
+        opacity: 0;
+        transition: opacity 0.1s ease-out;
     }
     .wrap.open .content {
-        animation: fade-in 0.5s 0.5s ease-out backwards;
-    }
-    @keyframes fade-in {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
+        opacity: 1;
+        transition: opacity 0.5s 0.5s ease-out;
     }
 
     a {
