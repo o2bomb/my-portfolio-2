@@ -31,7 +31,7 @@
             imageSrc="my work/xsyn/1.png"
             imageAlt="XSYN"
             offsetYFactor={-0.08}
-            initRotX={-20}
+            initRotX={-15}
             initRotY={20}
             animate={animateCards}
         />
@@ -40,8 +40,8 @@
             imageSrc="my work/supremacy/2.png"
             imageAlt="Supremacy: Battle Arena"
             offsetYFactor={-0.08}
-            initRotX={-5}
-            initRotY={-10}
+            initRotX={-15}
+            initRotY={-20}
             animate={animateCards}
         />
         <ProjectCard
@@ -58,7 +58,7 @@
             imageSrc="my work/art/1.png"
             imageAlt=""
             offsetYFactor={0.08}
-            initRotX={10}
+            initRotX={15}
             initRotY={-20}
             animate={animateCards}
         />
