@@ -1,7 +1,18 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    export { name, imageSrc, imageAlt, offsetXFactor, offsetYFactor, initRotX, initRotY, animate };
+    export {
+        href,
+        name,
+        imageSrc,
+        imageAlt,
+        offsetXFactor,
+        offsetYFactor,
+        initRotX,
+        initRotY,
+        animate,
+    };
 
+    let href: string;
     let name: string;
     let animate: boolean;
     let imageSrc: string;
@@ -74,7 +85,7 @@
     class="offset"
     style="--offset-x-factor:{offsetXFactor}; --offset-y-factor:{offsetYFactor}; --rotate-x:{currRotX}deg; --rotate-y:{currRotY}deg; --mouse-x:{targetX}%; --mouse-y:{targetY}%;"
 >
-    <a href="https://google.com">
+    <a {href}>
         <div class="c-Card">
             <div class="wrap">
                 <div class="text-container" tabindex="-1">

@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Oswald";
-    src: url("fonts/Oswald-Bold.woff2") format("woff2"),
-        url("fonts/Oswald-Bold.woff") format("woff");
+    src: url("/fonts/Oswald-Bold.woff2") format("woff2"),
+        url("/fonts/Oswald-Bold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: "Oswald";
-    src: url("fonts/Oswald-Medium.woff2") format("woff2"),
-        url("fonts/Oswald-Medium.woff") format("woff");
+    src: url("/fonts/Oswald-Medium.woff2") format("woff2"),
+        url("/fonts/Oswald-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: "Oswald";
-    src: url("fonts/Oswald-Regular.woff2") format("woff2"),
-        url("fonts/Oswald-Regular.woff") format("woff");
+    src: url("/fonts/Oswald-Regular.woff2") format("woff2"),
+        url("/fonts/Oswald-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face {
     font-family: "Work Sans";
-    src: url("fonts/WorkSans-Regular.woff2") format("woff2"),
-        url("fonts/WorkSans-Regular.woff") format("woff");
+    src: url("/fonts/WorkSans-Regular.woff2") format("woff2"),
+        url("/fonts/WorkSans-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -36,8 +36,8 @@
 
 @font-face {
     font-family: "Work Sans";
-    src: url("fonts/WorkSans-SemiBold.woff2") format("woff2"),
-        url("fonts/WorkSans-SemiBold.woff") format("woff");
+    src: url("/fonts/WorkSans-SemiBold.woff2") format("woff2"),
+        url("/fonts/WorkSans-SemiBold.woff") format("woff");
     font-weight: 600;
     font-style: normal;
     font-display: swap;

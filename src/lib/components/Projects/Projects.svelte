@@ -27,8 +27,9 @@
     </div>
     <div class="container">
         <ProjectCard
+            href="/projects/xsyn"
             name="XSYN"
-            imageSrc="my work/xsyn/1.png"
+            imageSrc="/my work/xsyn/1.png"
             imageAlt="XSYN"
             offsetYFactor={-0.08}
             initRotX={-15}
@@ -36,8 +37,9 @@
             animate={animateCards}
         />
         <ProjectCard
+            href="/projects/supremacy"
             name="Supremacy: Battle Arena"
-            imageSrc="my work/supremacy/2.png"
+            imageSrc="/my work/supremacy/2.png"
             imageAlt="Supremacy: Battle Arena"
             offsetYFactor={-0.08}
             initRotX={-15}
@@ -45,8 +47,9 @@
             animate={animateCards}
         />
         <ProjectCard
+            href="/projects/weareninja"
             name="We Are Ninja"
-            imageSrc="my work/weareninja/1.png"
+            imageSrc="/my work/weareninja/1.png"
             imageAlt=""
             offsetYFactor={0.08}
             initRotX={15}
@@ -54,8 +57,9 @@
             animate={animateCards}
         />
         <ProjectCard
+            href="/projects/art_showcase"
             name="Art Showcase 2020"
-            imageSrc="my work/art/1.png"
+            imageSrc="/my work/art/1.png"
             imageAlt=""
             offsetYFactor={0.08}
             initRotX={15}

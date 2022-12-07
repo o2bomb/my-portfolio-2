@@ -5,8 +5,8 @@
 </script>
 
 <svelte:head>
-    <title>Home</title>
-    <meta name="description" content="Svelte demo app" />
+    <title>Yong 'Felix' Tan</title>
+    <meta name="description" content="Yong 'Felix' Tan — Software Engineer" />
 </svelte:head>
 
 <section id="hero">

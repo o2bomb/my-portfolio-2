@@ -6,7 +6,6 @@
         if (open) {
         }
         countChanged++;
-        console.log(countChanged);
     }
 </script>
 
