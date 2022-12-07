@@ -10,9 +10,9 @@
     }
 </script>
 
-<div class="wrap">
-    <div class="c-Sidebar" class:open class:close={!open && countChanged > 1}>
-        <div class={`content ${open ? "open" : "close"}`}>
+<div class="wrap" class:open class:close={!open && countChanged > 1}>
+    <div class="c-Sidebar">
+        <div class="content">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/sverdle">Sverdle</a>
@@ -28,18 +28,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-    }
-
-    .c-Sidebar {
-        overflow-x: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        background-color: #1f1f1f;
         clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
     }
-    .c-Sidebar.close {
+    .wrap.close {
         animation: cut-out 1s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
     }
@@ -51,7 +42,7 @@
             clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
         }
     }
-    .c-Sidebar.open {
+    .wrap.open {
         animation: cut-in 1s cubic-bezier(0.22, 1, 0.36, 1);
         clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
     }
@@ -62,6 +53,15 @@
         100% {
             clip-path: polygon(0% 0%, 200% 0%, 0% 200%);
         }
+    }
+
+    .c-Sidebar {
+        overflow-x: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-color: #1f1f1f;
     }
 
     .content {
@@ -79,7 +79,7 @@
             opacity: 0;
         }
     }
-    .content.open {
+    .wrap.open .content {
         animation: fade-in 0.5s 0.5s ease-out backwards;
     }
     @keyframes fade-in {
