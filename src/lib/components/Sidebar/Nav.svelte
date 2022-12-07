@@ -1,9 +1,17 @@
 <script lang="ts">
     export let open = false;
+
+    let countChanged = 0;
+    $: {
+        if (open) {
+        }
+        countChanged++;
+        console.log(countChanged);
+    }
 </script>
 
-<div class={`wrap ${open ? "open" : "close"}`}>
-    <div class="c-Sidebar" class:open>
+<div class="wrap">
+    <div class="c-Sidebar" class:open class:close={!open && countChanged > 1}>
         <div class={`content ${open ? "open" : "close"}`}>
             <a href="/">Home</a>
             <a href="/about">About</a>
@@ -29,7 +37,11 @@
         justify-content: center;
         height: 100%;
         background-color: #1f1f1f;
+        clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
+    }
+    .c-Sidebar.close {
         animation: cut-out 1s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
     }
     @keyframes cut-out {
         0% {
