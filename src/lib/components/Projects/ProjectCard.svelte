@@ -123,6 +123,11 @@
         /* anti-aliasing fix for firefox */
         outline: 1px solid transparent;
     }
+    @media (max-width: 700px) {
+        .wrap {
+            transform: none;
+        }
+    }
 
     .text-container {
         z-index: 1;
