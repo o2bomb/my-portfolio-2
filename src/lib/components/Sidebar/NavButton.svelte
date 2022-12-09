@@ -13,8 +13,8 @@
     .c-SidebarButton {
         z-index: 100;
         position: fixed;
-        top: 1rem;
-        left: 1rem;
+        top: 2rem;
+        left: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;

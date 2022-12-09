@@ -57,7 +57,7 @@
             animate={animateCards}
         />
         <ProjectCard
-            href="/projects/art_showcase"
+            href="/projects/art"
             name="Art Showcase 2020"
             imageSrc="/my work/art/1.png"
             imageAlt=""
