@@ -44,9 +44,9 @@
 }
 
 :root {
-    --font-oswald-regular: normal 3rem "Oswald";
-    --font-oswald-medium: 500 3rem "Oswald";
-    --font-oswald-bold: bold 3rem "Oswald";
+    --font-oswald-regular: normal 3rem/1.1 "Oswald";
+    --font-oswald-medium: 500 3rem/1.1 "Oswald";
+    --font-oswald-bold: bold 3rem/1.1 "Oswald";
     --font-worksans-regular: normal 1rem "Work Sans";
     --font-worksans-semibold: 600 1rem "Work Sans";
 
