@@ -66,7 +66,6 @@
 }
 
 body {
-    margin: 0;
 }
 
 /* https://kittygiraudel.com/snippets/sr-only-class/ */
@@ -91,7 +90,6 @@ body {
 
 .oswald-medium {
     font: var(--font-oswald-medium);
-    line-height: 1.1;
 }
 
 .oswald-bold {

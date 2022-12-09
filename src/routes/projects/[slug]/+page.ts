@@ -37,7 +37,12 @@ export const PROJECT_DATA: ProjectData = {
     xsyn: {
         id: "xsyn",
         title: "XSYN",
-        description: "description",
+        description: `
+        <ul>
+        <li>Built the 3D backdrop of this site. The backdrop can be interacted with and showcases all current and planned future projects belonging to the XSYN universe, each game represented by a planet</li>
+        <li>Technologies used: React, TypeScript, Next.js, Three.js</li>
+        </ul>
+        `,
         gallery: [
             {
                 src: "/my work/xsyn/1.png",
@@ -48,7 +53,15 @@ export const PROJECT_DATA: ProjectData = {
     supremacy: {
         id: "supremacy",
         title: "Supremacy: Battle Arena",
-        description: "description",
+        description: `
+        <ul>
+        <li>Supremacy: Battle Arena is a rolling 24/7 livestream of gigantic mechs fighting in an endless battle royale, supported by their owners and assisted by the spectators via the web-app</li>
+        <li>Updates from the Battle Arena are sent to the React app in real-time via multiple WebSocket connections</li>
+        <li>Built user interface and server-side functionality for various core features such as the dutch auction player abilities system, player inbox, and player-owned mech loadouts</li>
+        <li>Designed and built user interface for the battle lobbies page</li>
+        <li>Technologies used: React, TypeScript, MUI, WebSockets, RESTful API, Go, Postgres, Docker</li>
+        </ul>
+        `,
         gallery: [
             {
                 src: "/my work/supremacy/1.png",
@@ -60,7 +73,13 @@ export const PROJECT_DATA: ProjectData = {
     weareninja: {
         id: "weareninja",
         title: "We Are Ninja",
-        description: "description",
+        description: `
+        <ul>
+        <li>Designed and built the 3D backdrop of this site</li>
+        <li>Built the "Team" section. It dynamically pulls data from Prismic, a headless CMS</li>
+        <li>Technologies used: React, TypeScript, Next.js, Three.js, Prismic (headless CMS)</li>
+        </ul>
+        `,
         gallery: [
             {
                 src: "/my work/weareninja/1.png",

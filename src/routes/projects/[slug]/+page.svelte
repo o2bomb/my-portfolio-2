@@ -24,9 +24,9 @@
     <div class="blurb">
         <div class="blurb-content">
             <h1>{project.title}</h1>
-            <p>
-                {project.description}
-            </p>
+            <div>
+                {@html project.description}
+            </div>
         </div>
         <div class="prev-next">
             <button
@@ -106,6 +106,7 @@
     }
 
     h1 {
+        margin-bottom: 1rem;
         font: var(--font-oswald-medium);
         font-size: 3rem;
         text-transform: uppercase;
