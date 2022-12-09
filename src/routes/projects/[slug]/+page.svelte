@@ -153,7 +153,7 @@
         transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1);
     }
     .prev-next button:active::after {
-        background-color: #d4d4d8;
+        background-color: #27272a;
     }
     .prev-next button:enabled:hover::after {
         transform: translateY(0);
