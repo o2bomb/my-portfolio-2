@@ -41,6 +41,9 @@
 
     .header-container {
         overflow-y: hidden;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
     h2 {
