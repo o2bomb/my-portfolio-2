@@ -130,6 +130,9 @@
         color: #52525b;
     }
 
+    ul {
+        list-style: none;
+    }
     .achievements li {
         padding-left: 0.7rem;
         background-image: linear-gradient(to bottom, #18181b, #18181b);
