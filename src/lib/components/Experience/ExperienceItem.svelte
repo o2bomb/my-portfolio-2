@@ -67,6 +67,11 @@
             opacity: 1;
         }
     }
+    @media (max-width: 1400px) {
+        .border {
+            background: #d4d4d8;
+        }
+    }
 
     .c-ExperienceItem::after {
         content: "";
