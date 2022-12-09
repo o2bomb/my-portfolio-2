@@ -11,11 +11,11 @@
 
 <div class="wrap" class:open class:close={!open && countChanged > 1}>
     <div class="c-Sidebar">
-        <div class="content">
+        <nav class="content">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/sverdle">Sverdle</a>
-        </div>
+        </nav>
     </div>
 </div>
 
