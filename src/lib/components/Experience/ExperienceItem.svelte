@@ -41,17 +41,18 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
         overflow-y: hidden;
     }
 
     .border {
         display: none;
         min-height: 1px;
+        width: 100%;
+        max-width: 2000px;
         background: linear-gradient(to right, transparent, #d4d4d8, transparent);
         opacity: 0;
     }
-
     .c-ExperienceItem:not(:last-child) .border {
         display: block;
     }
@@ -95,7 +96,6 @@
     .content {
         width: 100%;
         max-width: 1400px;
-        margin: 0 auto;
         padding: 1rem 2rem;
     }
 

@@ -34,7 +34,6 @@
     .c-Experience {
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
         background-color: #e4e4e7;
         color: #18181b;
     }
