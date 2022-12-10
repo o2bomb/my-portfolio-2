@@ -1,4 +1,5 @@
 <script>
+    import Button from "$lib/components/Button.svelte";
     import Experience from "$lib/components/Experience/Experience.svelte";
     import Projects from "$lib/components/Projects/Projects.svelte";
 </script>
@@ -10,7 +11,7 @@
 
 <section id="hero">
     <!-- <MyThree /> -->
-    <h1 class="oswald-medium cut-in">Yong "Felix" Tan</h1>
+    <h1 class="oswald-medium cut-in">Yong "Felix" TAN</h1>
     <div class="description cut-in">
         <p>
             I am currently part of the core development team working on the Supremacy Battle Arena
@@ -19,11 +20,13 @@
         </p>
         <p>I am a collaborator, an eager learner and a career-driven individual.</p>
     </div>
-    <!-- <div>
-        <Button>Projects</Button>
-        <Button>Experience</Button>
-        <Button>Skills</Button>
-    </div> -->
+    <div class="actions">
+        <div class="wrap">
+            <Button sectionId="projects">Projects</Button>
+            <Button sectionId="experience">Experience</Button>
+            <Button sectionId="skills">Skills</Button>
+        </div>
+    </div>
 </section>
 <Projects />
 <Experience />
@@ -43,7 +46,7 @@
     }
 
     h1 {
-        text-transform: uppercase;
+        font: var(--font-oswald-bold);
     }
 
     .description {
@@ -53,5 +56,23 @@
     }
     .description > *:not(:last-child) {
         margin-bottom: 1rem;
+    }
+
+    .actions {
+        overflow-y: hidden;
+    }
+    .actions .wrap {
+        transform: translateY(100%);
+    }
+    .actions .wrap {
+        animation: slide-up 1s 1s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+    }
+    @keyframes slide-up {
+        0% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
     }
 </style>
