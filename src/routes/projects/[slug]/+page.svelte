@@ -23,8 +23,11 @@
     </div>
     <div class="blurb">
         <div class="blurb-content">
-            <h1>{project.title}</h1>
-            <div>
+            <h1 class="title">{project.title}</h1>
+            {#if project.company}
+                <p class="company">@{project.company}</p>
+            {/if}
+            <div class="description">
                 {@html project.description}
             </div>
         </div>
@@ -91,7 +94,7 @@
 
     .blurb {
         position: relative;
-        flex-basis: 400px;
+        flex-basis: 500px;
         display: flex;
         flex-direction: column;
         background-color: #e4e4e7;
@@ -104,12 +107,32 @@
     .blurb-content {
         padding: 2rem;
     }
+    /* :global() is needed to style dynamically rendered html */
+    .blurb-content :global(.description > *:not(:last-child)) {
+        margin-bottom: 1rem;
+    }
 
     h1 {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         font: var(--font-oswald-medium);
         font-size: 3rem;
         text-transform: uppercase;
+    }
+
+    .company {
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .blurb-content :global(.description ul) {
+        list-style: none;
+    }
+    .blurb-content :global(.description li) {
+        padding-left: 0.7rem;
+        background-image: linear-gradient(to bottom, #18181b, #18181b);
+        background-position: 2px 4px;
+        background-size: 3px 1rem;
+        background-repeat: no-repeat;
     }
 
     .prev-next {
