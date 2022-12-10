@@ -1,5 +1,4 @@
 <script>
-    import Button from "$lib/components/Button.svelte";
     import Experience from "$lib/components/Experience/Experience.svelte";
     import Projects from "$lib/components/Projects/Projects.svelte";
 </script>
@@ -11,14 +10,20 @@
 
 <section id="hero">
     <!-- <MyThree /> -->
-    <h1 class="oswald-medium cut-in">Bobby Jones</h1>
-    <p>Lorem ipsum asdlfk jasdfkl jlasdkj asdlfk jdlfkads ladksjf dasf.</p>
-    <div>
+    <h1 class="oswald-medium cut-in">Yong "Felix" Tan</h1>
+    <div class="description cut-in">
+        <p>
+            I am currently part of the core development team working on the Supremacy Battle Arena
+            at Ninja Syndicate, working as a frontend/full stack developer. I love all things
+            frontend, and I am always looking for ways to grow as a web developer.
+        </p>
+        <p>I am a collaborator, an eager learner and a career-driven individual.</p>
+    </div>
+    <!-- <div>
         <Button>Projects</Button>
         <Button>Experience</Button>
         <Button>Skills</Button>
-        <Button>About</Button>
-    </div>
+    </div> -->
 </section>
 <Projects />
 <Experience />
@@ -41,8 +46,12 @@
         text-transform: uppercase;
     }
 
-    h1,
-    p {
-        /* mix-blend-mode: difference; */
+    .description {
+        max-width: 800px;
+        text-align: center;
+        animation-delay: 0.5s;
+    }
+    .description > *:not(:last-child) {
+        margin-bottom: 1rem;
     }
 </style>
