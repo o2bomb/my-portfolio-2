@@ -1,39 +1,44 @@
 <script lang="ts">
-    export { animate };
+    export { animate, company, from, to, role, assignedProjects };
+
+    interface AssignedProject {
+        name?: string;
+        achievements: string[];
+    }
 
     let animate: boolean;
+    let company: string;
+    let from: string;
+    let to: string | undefined;
+    let role: string;
+    let assignedProjects: AssignedProject[] = [];
 </script>
 
 <div class="c-ExperienceItem" class:animate>
     <div class="content">
         <div class="flex">
             <h3 class="company">
-                Ninja Syndicate (formerly Ninja Software)
-                <span class="date">Mar 2021 - <strong>Present</strong></span>
+                {company}
+                <span class="date">{from} - {@html to || "<strong>Present</strong>"}</span>
             </h3>
         </div>
-        <p class="role">Fullstack Developer</p>
-        <div class="project">
-            <p class="project-title">
-                <span>Assigned Project:</span>Supremacy: Battle Arena
-            </p>
-            <ul class="achievements">
-                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quibusdam.
-                </li>
-                <li>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, ea corporis
-                    delectus voluptatem nostrum non ad sit impedit aut earum.
-                </li>
-                <li>Lorem, ipsum dolor.</li>
-            </ul>
-        </div>
+        <p class="role">{role}</p>
+        {#each assignedProjects as { name, achievements }}
+            <div class="project">
+                {#if name}
+                    <p class="project-title">
+                        <span>Assigned Project:</span>{name}
+                    </p>
+                {/if}
+                <ul class="achievements">
+                    {#each achievements as a}
+                        <li>{a}</li>
+                    {/each}
+                </ul>
+            </div>
+        {/each}
     </div>
     <div class="border" />
-    <!-- <div class="spacer" />
-  <a>View Projects →</a> -->
 </div>
 
 <style>
@@ -128,6 +133,10 @@
         font-weight: 400;
         color: #52525b;
         white-space: nowrap;
+    }
+
+    .project:not(:last-child) {
+        margin-bottom: 0.5rem;
     }
 
     .project .project-title span {

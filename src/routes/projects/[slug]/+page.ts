@@ -42,8 +42,8 @@ export const PROJECT_DATA: ProjectData = {
         description: `
         <ul>
         <li>Built the 3D backdrop of this site. The backdrop can be interacted with and showcases all current and planned future projects belonging to the XSYN universe, each game represented by a planet</li>
-        <li>Technologies used: React, TypeScript, Next.js, Three.js</li>
         </ul>
+        <i>Technologies used: React, TypeScript, Next.js, Three.js</i>
         `,
         gallery: [
             {
