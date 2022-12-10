@@ -7,9 +7,17 @@
 
     $: project = data.project;
 
+    const goToProject = (projectId: string) => {
+        goto(projectId);
+        refetch(projectId);
+        showProjectNav = false;
+    };
     const refetch = (projectId: string) => {
         project = PROJECT_DATA[projectId];
     };
+
+    const PROJECT_NAV_BUTTON_WIDTH = "30px";
+    let showProjectNav = false;
 </script>
 
 <svelte:head>
@@ -17,7 +25,11 @@
     <meta name="description" content="Projects — {project.title}" />
 </svelte:head>
 
-<div class="container" style="--gallery-background: url('{project.gallery[0].src}');">
+<div
+    class="container"
+    style="--gallery-background: url('{project.gallery[0]
+        .src}');--project-nav-button-width:{PROJECT_NAV_BUTTON_WIDTH};"
+>
     <div class="gallery">
         <img src={project.gallery[0].src} alt="Preview" />
     </div>
@@ -36,8 +48,7 @@
                 class="prev"
                 on:click={() => {
                     if (!project.prev) return;
-                    goto(project.prev);
-                    refetch(project.prev);
+                    goToProject(project.prev);
                 }}
                 disabled={!project.prev}
             >
@@ -50,8 +61,7 @@
                 class="next"
                 on:click={() => {
                     if (!project.next) return;
-                    goto(project.next);
-                    refetch(project.next);
+                    goToProject(project.next);
                 }}
                 disabled={!project.next}
             >
@@ -60,6 +70,19 @@
                     <span class="sub">{project.next}</span>
                 {/if}
             </button>
+        </div>
+    </div>
+    <div class="project-nav" class:open={showProjectNav}>
+        <button class="control" on:click={() => (showProjectNav = !showProjectNav)}
+            >{showProjectNav ? "Close" : "View all projects"}</button
+        >
+        <div class="content">
+            {#each Object.values(PROJECT_DATA) as { id, title, gallery }}
+                <button class="card" on:click={() => goToProject(id)}>
+                    <p>{title}</p>
+                    <img src={gallery[0].src} />
+                </button>
+            {/each}
         </div>
     </div>
 </div>
@@ -97,6 +120,7 @@
         flex-basis: 500px;
         display: flex;
         flex-direction: column;
+        margin-right: var(--project-nav-button-width);
         background-color: #e4e4e7;
         color: #18181b;
         box-shadow: -0.4px 0px 0.5px rgb(0, 0, 0, 0.4), -5.7px 0.1px 6.4px -0.8px rgb(0, 0, 0, 0.4),
@@ -187,5 +211,67 @@
     .sub {
         font: var(--font-oswald-regular);
         font-size: 1rem;
+    }
+
+    .project-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateX(500px);
+        width: calc(500px + var(--project-nav-button-width));
+        transition: transform 0.3s, box-shadow 0.6s;
+        background-color: #18181b;
+    }
+    .project-nav.open {
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s;
+        transform: translateX(0);
+    }
+
+    .project-nav .control {
+        position: absolute;
+        top: 0;
+        left: var(--project-nav-button-width);
+        transform-origin: top left;
+        transform: rotate(90deg);
+        height: var(--project-nav-button-width);
+        width: 100vh;
+        background-color: #18181b;
+        transition: all 0.3s;
+        text-transform: uppercase;
+    }
+    .project-nav.open .control {
+        color: black;
+        background-color: #ef4444;
+    }
+
+    .project-nav .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        margin-left: var(--project-nav-button-width);
+        padding: 2rem;
+        transform: translateX(2rem) scale(0.8);
+        transition: transform 1s 0.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .project-nav.open .content {
+        transform: translateX(0) scale(1);
+    }
+    .project-nav .content .card {
+        width: 100%;
+        text-align: left;
+        text-transform: uppercase;
+    }
+    .project-nav .content .card:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+    .project-nav .content .card p {
+        margin-bottom: 0.5rem;
+        font: var(--font-oswald-medium);
+        font-size: 1rem;
+    }
+    .project-nav .content .card img {
+        width: 100%;
     }
 </style>
