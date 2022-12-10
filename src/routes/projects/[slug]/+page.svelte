@@ -107,7 +107,7 @@
         right: 0;
         bottom: 0;
         background: var(--gallery-background);
-        filter: blur(20px) grayscale(70%);
+        filter: blur(20px) grayscale(70%) brightness(50%);
     }
     .gallery img {
         position: relative;
