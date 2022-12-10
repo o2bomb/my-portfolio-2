@@ -13,8 +13,8 @@
     <div class="c-Sidebar">
         <nav class="content">
             <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/sverdle">Sverdle</a>
+            <a href="/#projects">Projects</a>
+            <a href="/#experience">Experience</a>
         </nav>
     </div>
 </div>

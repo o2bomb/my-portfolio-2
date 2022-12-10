@@ -1,5 +1,5 @@
 <script>
-    import { navigating } from "$app/stores";
+    import { navigating, page } from "$app/stores";
     import Nav from "$lib/components/Sidebar/Nav.svelte";
     import NavButton from "$lib/components/Sidebar/NavButton.svelte";
     import "../global.css";
@@ -7,7 +7,10 @@
 
     let showSidebar = false;
 
-    $: if ($navigating === null) showSidebar = false;
+    $: {
+        if ($navigating === null) showSidebar = false;
+        if ($page.url.hash) showSidebar = false;
+    }
 </script>
 
 <div class="app">
