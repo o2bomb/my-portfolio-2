@@ -24,7 +24,7 @@
         <div class="wrap">
             <Button sectionId="projects">Projects</Button>
             <Button sectionId="experience">Experience</Button>
-            <Button sectionId="skills">Skills</Button>
+            <!-- <Button sectionId="skills">Skills</Button> -->
         </div>
     </div>
 </section>
