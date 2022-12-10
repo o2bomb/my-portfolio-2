@@ -95,7 +95,9 @@ export const PROJECT_DATA: ProjectData = {
     art: {
         id: "art",
         title: "Art Showcase 2020",
-        description: "description",
+        description: `
+        <p>A website that I built to showcase all of my favourite art pieces from 2020. I experimented with mouse hover effects and custom cursor effects. The website also features fully animated page transitions, which I built from scratch (no external libraries used).</p>
+        `,
         gallery: [
             {
                 src: "/my work/art/1.png",
