@@ -90,6 +90,7 @@
 
 <style>
     .container {
+        overflow: hidden;
         position: relative;
         display: flex;
         height: 100vh;
@@ -133,6 +134,7 @@
         flex-basis: var(--project-nav-width);
         display: flex;
         flex-direction: column;
+        height: 100%;
         margin-right: var(--project-nav-button-width);
         background-color: #e4e4e7;
         color: #18181b;
@@ -142,6 +144,8 @@
     }
 
     .blurb-content {
+        overflow-y: auto;
+        flex: 1;
         padding: 2rem;
     }
     /* :global() is needed to style dynamically rendered html */
@@ -228,11 +232,13 @@
     }
 
     .project-nav {
+        z-index: 1;
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         transform: translateX(var(--project-nav-width));
+        height: 100%;
         width: calc(var(--project-nav-width) + var(--project-nav-button-width));
         transition: transform 0.3s, box-shadow 0.6s;
         background-color: #18181b;
@@ -260,10 +266,10 @@
     }
 
     .project-nav .content {
+        overflow-y: auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        height: 100%;
+        height: 100vh;
         margin-left: var(--project-nav-button-width);
         padding: 2rem;
         transform: translateX(2rem) scale(0.8);
@@ -287,5 +293,32 @@
     }
     .project-nav .content .card img {
         width: 100%;
+    }
+
+    @media (max-width: 1000px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .gallery {
+            max-height: min(400px, 50vh);
+        }
+
+        .blurb {
+            flex: 1;
+            min-height: 0;
+        }
+
+        .project-nav {
+            transform: translateX(100%);
+            width: 100%;
+            max-width: 400px;
+        }
+        .project-nav .control {
+            left: 0;
+        }
+        .project-nav.open .control {
+            transform: translateX(var(--project-nav-button-width)) rotate(90deg);
+        }
     }
 </style>

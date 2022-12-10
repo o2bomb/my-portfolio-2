@@ -29,7 +29,6 @@
 
 <style>
     .app {
-        overflow-x: hidden;
         position: relative;
         display: flex;
         min-height: 100vh;
