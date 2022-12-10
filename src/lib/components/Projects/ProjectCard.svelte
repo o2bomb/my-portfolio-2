@@ -238,6 +238,11 @@
     .c-Card:hover .fancy-border::after {
         transform: rotate(0);
     }
+    @media (max-width: 700px) {
+        .c-Card:hover {
+            transform: none;
+        }
+    }
 
     .effect {
         position: absolute;

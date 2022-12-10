@@ -259,6 +259,7 @@
         background-color: #18181b;
         transition: all 0.3s;
         text-transform: uppercase;
+        font-weight: 600;
     }
     .project-nav.open .control {
         color: black;
