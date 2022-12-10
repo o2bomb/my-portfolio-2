@@ -31,6 +31,7 @@
         .src}');--project-nav-button-width:{PROJECT_NAV_BUTTON_WIDTH};"
 >
     <div class="gallery">
+        <a class="home" href="/#projects">Go Back</a>
         <img src={project.gallery[0].src} alt="Preview" />
     </div>
     <div class="blurb">
@@ -113,6 +114,16 @@
         height: 100%;
         width: 100%;
         object-fit: contain;
+    }
+
+    .home {
+        z-index: 1;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font: var(--font-oswald-regular);
+        font-size: 1.6rem;
+        text-transform: uppercase;
     }
 
     .blurb {
