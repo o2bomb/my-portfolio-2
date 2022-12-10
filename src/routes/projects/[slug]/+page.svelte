@@ -93,6 +93,8 @@
         position: relative;
         display: flex;
         height: 100vh;
+
+        --project-nav-width: min(500px, 30vw);
     }
 
     .gallery {
@@ -128,7 +130,7 @@
 
     .blurb {
         position: relative;
-        flex-basis: 500px;
+        flex-basis: var(--project-nav-width);
         display: flex;
         flex-direction: column;
         margin-right: var(--project-nav-button-width);
@@ -181,6 +183,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
         height: 6rem;
         width: 50%;
@@ -229,8 +232,8 @@
         top: 0;
         right: 0;
         bottom: 0;
-        transform: translateX(500px);
-        width: calc(500px + var(--project-nav-button-width));
+        transform: translateX(var(--project-nav-width));
+        width: calc(var(--project-nav-width) + var(--project-nav-button-width));
         transition: transform 0.3s, box-shadow 0.6s;
         background-color: #18181b;
     }
