@@ -25,6 +25,9 @@
 </script>
 
 <section id="projects" class="c-NewProjects">
+    <div class="heading-container">
+        <h2 class:animate class:show={showHeading}>Projects</h2>
+    </div>
     <NewProjectCard
         href="/projects/xsyn"
         name="XSYN"
@@ -32,6 +35,7 @@
         imageAlt="XSYN"
         {onEnterFocus}
         {onLeaveFocus}
+        {animate}
     />
     <NewProjectCard
         href="/projects/supremacy"
@@ -40,6 +44,7 @@
         imageAlt="Supremacy: Battle Arena"
         {onEnterFocus}
         {onLeaveFocus}
+        {animate}
     />
     <NewProjectCard
         href="/projects/weareninja"
@@ -48,6 +53,7 @@
         imageAlt=""
         {onEnterFocus}
         {onLeaveFocus}
+        {animate}
     />
     <NewProjectCard
         href="/projects/art"
@@ -56,10 +62,8 @@
         imageAlt=""
         {onEnterFocus}
         {onLeaveFocus}
+        {animate}
     />
-    <div class="heading-container">
-        <h2 class:animate class:show={showHeading}>Projects</h2>
-    </div>
 </section>
 
 <style>
@@ -67,10 +71,13 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        background-color: #e4e4e7;
+        color: #18181b;
     }
 
     .heading-container {
         overflow-y: hidden;
+        z-index: 1;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -84,6 +91,7 @@
         opacity: 0;
         transition: opacity 0.4s;
         pointer-events: none;
+        color: #e4e4e7;
     }
     h2.show {
         opacity: 1;
@@ -97,6 +105,23 @@
         }
         100% {
             transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 700px), (hover: none) {
+        .heading-container {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            padding: 2rem;
+            padding-bottom: 1rem;
+        }
+        h2 {
+            font-size: 3rem;
+            pointer-events: unset;
+            opacity: 1;
+            color: #18181b;
         }
     }
 </style>

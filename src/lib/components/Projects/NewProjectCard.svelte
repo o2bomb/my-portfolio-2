@@ -11,6 +11,7 @@
 
 <a
     class="c-NewProjectCard"
+    class:animate
     {href}
     on:mouseenter={onEnterFocus}
     on:mouseleave={onLeaveFocus}
@@ -77,6 +78,7 @@
         font-size: 3rem;
         text-transform: uppercase;
         clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
+        color: #e4e4e7;
     }
     h3::before {
         display: block;
@@ -87,5 +89,23 @@
     .c-NewProjectCard:focus h3,
     .c-NewProjectCard:active h3 {
         animation: cut-in 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @media (max-width: 700px), (hover: none) {
+        .c-NewProjectCard img {
+            filter: blur(1px) grayscale(70%) brightness(50%);
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+        .c-NewProjectCard:hover h3,
+        .c-NewProjectCard:focus h3,
+        .c-NewProjectCard:active h3 {
+            animation: none;
+        }
+        .c-NewProjectCard.animate h3 {
+            animation: cut-in 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
     }
 </style>
