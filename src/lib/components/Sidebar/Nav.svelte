@@ -27,29 +27,36 @@
         left: 0;
         right: 0;
         bottom: 0;
+        -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
         clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
     }
     .wrap.close {
         animation: cut-out 1s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        -webkit-clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
         clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
     }
     @keyframes cut-out {
         0% {
+            -webkit-clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
             clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
         }
         100% {
+            -webkit-clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
             clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
         }
     }
     .wrap.open {
         animation: cut-in 1s cubic-bezier(0.22, 1, 0.36, 1);
+        -webkit-clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
         clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
     }
     @keyframes cut-in {
         0% {
+            -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
             clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
         }
         100% {
+            -webkit-clip-path: polygon(0% 0%, 200% 0%, 0% 200%);
             clip-path: polygon(0% 0%, 200% 0%, 0% 200%);
         }
     }
