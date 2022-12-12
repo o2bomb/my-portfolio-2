@@ -2,6 +2,7 @@
     import Button from "$lib/components/Button.svelte";
     import Experience from "$lib/components/Experience/Experience.svelte";
     import NewProjects from "$lib/components/Projects/NewProjects.svelte";
+    import Skills from "$lib/components/Skills/Skills.svelte";
 </script>
 
 <svelte:head>
@@ -24,12 +25,13 @@
         <div class="wrap">
             <Button sectionId="projects">Projects</Button>
             <Button sectionId="experience">Experience</Button>
-            <!-- <Button sectionId="skills">Skills</Button> -->
+            <Button sectionId="skills">Skills</Button>
         </div>
     </div>
 </section>
 <NewProjects />
 <Experience />
+<Skills />
 
 <style>
     #hero {
@@ -65,6 +67,8 @@
         overflow-y: hidden;
     }
     .actions .wrap {
+        display: flex;
+        justify-content: center;
         transform: translateY(100%);
     }
     .actions .wrap {

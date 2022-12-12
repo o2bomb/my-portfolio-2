@@ -15,6 +15,7 @@
             <a href="/">Home</a>
             <a href="/#projects">Projects</a>
             <a href="/#experience">Experience</a>
+            <a href="/#skills">Skills</a>
         </nav>
     </div>
 </div>
@@ -68,6 +69,7 @@
         justify-content: center;
         height: 100%;
         background-color: #1f1f1f;
+        color: #e4e4e7;
     }
 
     .content {

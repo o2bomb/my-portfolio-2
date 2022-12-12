@@ -88,7 +88,7 @@
         text-transform: uppercase;
         font: var(--font-oswald-medium);
         font-size: 6rem;
-        opacity: 0;
+        opacity: 0.1;
         transition: opacity 0.4s;
         pointer-events: none;
         color: #e4e4e7;

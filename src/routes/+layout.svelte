@@ -36,6 +36,5 @@
 
     main {
         flex: 1;
-        background-color: #18181b;
     }
 </style>
