@@ -62,7 +62,7 @@
         company="Ninja Software"
         from="Jan. 2021"
         to="Mar. 2021"
-        role="Intern Software Developer"
+        role="Software Developer Intern"
         assignedProjects={[
             {
                 name: "Safe 2 Say",
@@ -81,7 +81,7 @@
         company="Headstart Careers"
         from="July. 2020"
         to="Aug. 2020"
-        role="Intern Software Developer"
+        role="Software Developer Intern"
         assignedProjects={[
             {
                 achievements: [

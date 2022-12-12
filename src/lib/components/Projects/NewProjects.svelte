@@ -92,6 +92,7 @@
         transition: opacity 0.4s;
         pointer-events: none;
         color: #e4e4e7;
+        transform: translateY(100%);
     }
     h2.show {
         opacity: 1;
@@ -114,14 +115,14 @@
             top: 0;
             left: 0;
             transform: none;
-            padding: 2rem;
-            padding-bottom: 1rem;
         }
         h2 {
             font-size: 3rem;
             pointer-events: unset;
             opacity: 1;
             color: #18181b;
+            padding: 2rem;
+            padding-bottom: 1rem;
         }
     }
 </style>
