@@ -77,7 +77,6 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 
         --card-width: 30rem;
     }

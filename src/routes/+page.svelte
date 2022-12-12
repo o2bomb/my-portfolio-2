@@ -1,7 +1,7 @@
 <script>
     import Button from "$lib/components/Button.svelte";
     import Experience from "$lib/components/Experience/Experience.svelte";
-    import Projects from "$lib/components/Projects/Projects.svelte";
+    import NewProjects from "$lib/components/Projects/NewProjects.svelte";
 </script>
 
 <svelte:head>
@@ -28,7 +28,7 @@
         </div>
     </div>
 </section>
-<Projects />
+<NewProjects />
 <Experience />
 
 <style>
@@ -40,6 +40,8 @@
         justify-content: center;
         min-height: 100vh;
         padding: 2rem;
+        background-color: #e4e4e7;
+        color: #18181b;
     }
 
     #hero > *:not(:last-child) {
