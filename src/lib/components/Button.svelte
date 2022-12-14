@@ -9,11 +9,11 @@
 
 <style>
     .c-Button {
-        font: var(--font-oswald-medium);
-        font-size: 2rem;
+        font: var(--font-oswald-regular);
+        font-size: 1.6rem;
         text-transform: uppercase;
     }
     .c-Button:not(:last-child) {
-        margin-right: 1rem;
+        margin-bottom: 0.5rem;
     }
 </style>
