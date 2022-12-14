@@ -86,8 +86,9 @@
     }
 
     a {
-        font: var(--font-worksans-semibold);
+        font: var(--font-oswald-medium);
         font-size: 3rem;
+        text-transform: uppercase;
     }
     a:not(:last-child) {
         margin-bottom: 1rem;
