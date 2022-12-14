@@ -76,6 +76,7 @@
     .actions .wrap {
         display: flex;
         flex-direction: column;
+        width: fit-content;
         transform: translateX(-100%);
     }
     .actions .wrap {
