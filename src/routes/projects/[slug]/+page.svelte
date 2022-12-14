@@ -1,7 +1,7 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
+    import { PROJECT_DATA } from "../data";
     import type { PageData } from "./$types";
-    import { PROJECT_DATA } from "./+page";
 
     export let data: PageData;
 
