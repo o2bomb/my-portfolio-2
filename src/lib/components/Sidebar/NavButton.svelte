@@ -1,9 +1,27 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
     export let onclick: () => void;
     export let open: boolean;
+
+    let show = false;
+    onMount(() => {
+        let observer = new IntersectionObserver(
+            (entry) => {
+                if (entry.length === 0) return;
+                show = !entry[0].isIntersecting;
+            },
+            {
+                threshold: 0.05,
+            },
+        );
+
+        const target = document.getElementById("hero");
+        observer.observe(target);
+    });
 </script>
 
-<button class="c-SidebarButton" on:click={onclick} class:open>
+<button class="c-SidebarButton" on:click={onclick} class:open class:show>
     <span class="line top" />
     <span class="line middle" />
     <span class="line bottom" />
@@ -15,12 +33,18 @@
         position: fixed;
         top: 2rem;
         left: 2rem;
+        transform: translate(calc(-100% - 2rem), 0);
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 40px;
         width: 40px;
         mix-blend-mode: difference;
+        transition: transform 0.3s;
+    }
+
+    .c-SidebarButton.show {
+        transform: translate(0, 0);
     }
 
     .c-SidebarButton .line {
