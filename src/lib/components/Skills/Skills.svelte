@@ -113,4 +113,8 @@
         content: ",";
         margin-right: 1rem;
     }
+
+    ul:not(:last-child) {
+        margin-bottom: 1rem;
+    }
 </style>
