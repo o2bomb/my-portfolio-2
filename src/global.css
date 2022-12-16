@@ -69,7 +69,6 @@ body {
 
 #app-inner {
     position: relative;
-    display: flex;
     min-height: 100vh;
 }
 
