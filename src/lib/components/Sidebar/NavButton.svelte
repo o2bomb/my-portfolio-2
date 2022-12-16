@@ -22,9 +22,10 @@
 </script>
 
 <button class="c-SidebarButton" on:click={onclick} class:open class:show>
-    <span class="line top" />
-    <span class="line middle" />
-    <span class="line bottom" />
+    <span class="line top" aria-hidden="true" />
+    <span class="line middle" aria-hidden="true" />
+    <span class="line bottom" aria-hidden="true" />
+    <span class="visually-hidden">Navigation</span>
 </button>
 
 <style>
@@ -74,5 +75,15 @@
     }
     .c-SidebarButton.open .bottom {
         transform: rotate(-45deg) scale(0.8);
+    }
+
+    .visually-hidden:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(100%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
 </style>
