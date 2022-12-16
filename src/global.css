@@ -67,6 +67,12 @@
 body {
 }
 
+#app-inner {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+
 .oswald-regular {
     font: var(--font-oswald-regular);
     line-height: 1.1;

@@ -11,8 +11,8 @@
 </svelte:head>
 
 <section id="hero">
-    <!-- <MyThree /> -->
     <div class="content">
+        <!-- <MyThree /> -->
         <h1 class="cut-in">Yong "Felix" Tan</h1>
         <div class="description cut-in">
             <p>
@@ -37,7 +37,6 @@
 
 <style>
     #hero {
-        position: relative;
         height: 100vh;
         padding: 2rem;
         background-color: #e4e4e7;
@@ -45,6 +44,7 @@
     }
 
     .content {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: end;
