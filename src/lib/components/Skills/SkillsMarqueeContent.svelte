@@ -65,9 +65,22 @@
     <span>Skills</span>
     <span>Skills</span>
     <span>Skills</span>
+    <span>Skills</span>
+    <span>Skills</span>
+    <span>Skills</span>
+    <span>Skills</span>
+    <span>Skills</span>
+    <span>Skills</span>
+    <span>Skills</span>
+    <span>Skills</span>
 </p>
 
 <style>
-    .c-SkillsMarqueeContent {
+    p {
+        display: flex;
+    }
+
+    span:not(:last-child) {
+        margin-right: 1rem;
     }
 </style>

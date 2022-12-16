@@ -6,11 +6,39 @@
     <div class="marquee top">
         <hgroup class="marquee-inner">
             <h2>Skills</h2>
-            &nbsp;
             <SkillsMarqueeContent minusOne={true} />
         </hgroup>
     </div>
-    <div class="content" />
+    <div class="content">
+        <p>Languages</p>
+        <ul>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>Go (Golang)</li>
+        </ul>
+        <p>Frameworks and Technologies</p>
+        <ul>
+            <li>React</li>
+            <li>Docker</li>
+            <li>Postgres</li>
+            <li>SQL</li>
+            <li>Three.js</li>
+            <li>Next.js</li>
+            <li>Sass / Scss</li>
+            <li>MUI</li>
+            <li>WebSocket</li>
+            <li>REST</li>
+            <li>NodeJS</li>
+        </ul>
+        <p>Tools</p>
+        <ul>
+            <li>Windows</li>
+            <li>Linux</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>VS Code</li>
+        </ul>
+    </div>
     <div class="marquee bottom" aria-hidden="true">
         <div class="marquee-inner">
             <SkillsMarqueeContent />
@@ -21,13 +49,11 @@
 <style>
     .c-Skills {
         position: relative;
-        width: 100%;
-        min-height: 100vh;
+        display: flex;
     }
 
     .marquee {
         overflow: hidden;
-        width: 100%;
         --offset: 20vw;
         --move-initial: calc(-25% + var(--offset));
         --move-final: calc(-50% + var(--offset));
@@ -65,7 +91,26 @@
         }
     }
 
+    h2 {
+        margin-right: 1rem;
+    }
+
     .content {
-        padding: 2rem;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 10rem 2rem;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        font: var(--font-worksans-semibold);
+        font-size: 3rem;
+    }
+    li:not(:last-child)::after {
+        content: ",";
+        margin-right: 1rem;
     }
 </style>
