@@ -1,31 +1,13 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import ExperienceItem from "./ExperienceItem.svelte";
-
-    let animateItems = false;
-    onMount(() => {
-        let observer = new IntersectionObserver(
-            (entry) => {
-                if (entry.length === 0) return;
-                if (!entry[0].isIntersecting) return;
-                animateItems = true;
-            },
-            {
-                threshold: 0.2,
-            },
-        );
-
-        const target = document.getElementById("experience");
-        observer.observe(target);
-    });
 </script>
 
 <section id="experience" class="c-Experience">
     <div class="header-container">
-        <h2 class="oswald-medium" class:animate={animateItems}>Experience</h2>
+        <h2 class="oswald-medium animate">Experience</h2>
     </div>
     <ExperienceItem
-        animate={animateItems}
+        animate
         company="Ninja Syndicate (formerly Ninja Software)"
         from="Mar 2021"
         role="Fullstack Web Developer"
@@ -58,7 +40,7 @@
         ]}
     />
     <ExperienceItem
-        animate={animateItems}
+        animate
         company="Ninja Software"
         from="Jan. 2021"
         to="Mar. 2021"
@@ -77,7 +59,7 @@
         ]}
     />
     <ExperienceItem
-        animate={animateItems}
+        animate
         company="Headstart Careers"
         from="July. 2020"
         to="Aug. 2020"
@@ -94,7 +76,7 @@
         ]}
     />
     <ExperienceItem
-        animate={animateItems}
+        animate
         company="Deloitte Australia"
         from="Apr. 2019"
         to="Nov. 2019"
