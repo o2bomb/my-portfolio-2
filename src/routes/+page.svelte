@@ -13,7 +13,13 @@
 <section id="hero">
     <div class="content">
         <!-- <MyThree /> -->
-        <h1 class="cut-in">Yong "Felix" Tan</h1>
+        <div class="heading">
+            <h1 class="cut-in">Yong "Felix" Tan</h1>
+            <address>
+                <a href="mailto:yong@felixtan.me">yong@felixtan.me</a>
+            </address>
+        </div>
+
         <div class="description cut-in">
             <p>
                 I am currently part of the core development team working on the Supremacy Battle
@@ -57,8 +63,15 @@
         margin-bottom: 1rem;
     }
 
+    .heading > * {
+        display: inline-block;
+    }
     h1 {
         font: var(--font-oswald-regular);
+    }
+    address {
+        margin-left: 0.5rem;
+        font-style: normal;
     }
 
     .description {
