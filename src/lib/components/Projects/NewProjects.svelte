@@ -121,7 +121,7 @@
             pointer-events: unset;
             opacity: 1;
             color: #18181b;
-            padding: 2rem;
+            padding: 0 2rem;
             padding-bottom: 1rem;
         }
     }
