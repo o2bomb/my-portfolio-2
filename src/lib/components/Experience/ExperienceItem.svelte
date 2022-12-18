@@ -165,14 +165,4 @@
         right: 2rem;
         white-space: nowrap;
     }
-
-    @media (max-width: 800px) {
-        .c-ExperienceItem {
-            flex-direction: column;
-        }
-
-        a {
-            position: static;
-        }
-    }
 </style>

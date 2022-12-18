@@ -29,6 +29,7 @@
             <li>WebSocket</li>
             <li>REST</li>
             <li>NodeJS</li>
+            <li>Prismic (Headless CMS)</li>
         </ul>
         <p>Tools</p>
         <ul>
@@ -116,5 +117,11 @@
 
     ul:not(:last-child) {
         margin-bottom: 1rem;
+    }
+
+    @media (max-width: 700px) {
+        ul {
+            font-size: 2rem;
+        }
     }
 </style>
