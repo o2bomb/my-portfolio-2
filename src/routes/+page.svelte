@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-    <title>Yong 'Felix' Tan</title>
+    <title>Felix Tan — Software Engineer</title>
     <meta name="description" content="Yong 'Felix' Tan — Software Engineer" />
 </svelte:head>
 
