@@ -51,7 +51,6 @@ export const PROJECT_DATA: ProjectData = {
         <li>Supremacy: Battle Arena is a rolling 24/7 livestream of gigantic mechs fighting in an endless battle royale, supported by their owners and assisted by the spectators via the web-app</li>
         <li>Updates from the Battle Arena are sent to the React app in real-time via multiple WebSocket connections</li>
         <li>Built user interface and server-side functionality for various core features such as the dutch auction player abilities system, player inbox, and player-owned mech loadouts</li>
-        <li>Designed and built user interface for the battle lobbies page</li>
         </ul>
         <i>Technologies used: React, TypeScript, MUI, WebSockets, RESTful API, Go, Postgres, Docker</i>
         `,
