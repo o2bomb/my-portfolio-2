@@ -35,8 +35,8 @@
 <section id="hero">
     <div class="content">
         <!-- <MyThree /> -->
-        <div class="heading">
-            <h1 class="cut-in">Yong "Felix" Tan</h1>
+        <div class="heading cut-in">
+            <h1>Yong "Felix" Tan</h1>
             <address>
                 <a href="mailto:yong@felixtan.me">yong@felixtan.me</a>
             </address>
