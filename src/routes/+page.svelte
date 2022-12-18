@@ -103,4 +103,16 @@
             transform: translateX(0);
         }
     }
+
+    @media (max-width: 700px) {
+        .content {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            padding: 1rem;
+        }
+    }
 </style>
