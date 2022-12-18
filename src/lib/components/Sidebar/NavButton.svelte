@@ -1,27 +1,9 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-
     export let onclick: () => void;
     export let open: boolean;
-
-    let show = false;
-    onMount(() => {
-        let observer = new IntersectionObserver(
-            (entry) => {
-                if (entry.length === 0) return;
-                show = !entry[0].isIntersecting;
-            },
-            {
-                threshold: 0.05,
-            },
-        );
-
-        const target = document.getElementById("hero");
-        observer.observe(target);
-    });
 </script>
 
-<button class="c-SidebarButton" on:click={onclick} class:open class:show>
+<button id="nav-button" class="c-SidebarButton show" on:click={onclick} class:open>
     <span class="line top" aria-hidden="true" />
     <span class="line middle" aria-hidden="true" />
     <span class="line bottom" aria-hidden="true" />

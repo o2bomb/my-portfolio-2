@@ -3,6 +3,28 @@
     import Experience from "$lib/components/Experience/Experience.svelte";
     import NewProjects from "$lib/components/Projects/NewProjects.svelte";
     import Skills from "$lib/components/Skills/Skills.svelte";
+    import { onMount } from "svelte";
+
+    // Control whether or not to show NavButton based on hero visibility
+    onMount(() => {
+        const navButton = document.getElementById("nav-button");
+        let observer = new IntersectionObserver(
+            (entry) => {
+                if (!navButton || entry.length === 0) return;
+                if (!entry[0].isIntersecting) {
+                    navButton.classList.add("show");
+                } else {
+                    navButton.classList.remove("show");
+                }
+            },
+            {
+                threshold: 0.05,
+            },
+        );
+
+        const target = document.getElementById("hero");
+        observer.observe(target);
+    });
 </script>
 
 <svelte:head>
