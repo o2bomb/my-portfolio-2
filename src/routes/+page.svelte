@@ -43,7 +43,6 @@
 
 <style>
     #hero {
-        height: 100vh;
         padding: 2rem;
         background-color: #e4e4e7;
         color: #18181b;
@@ -54,7 +53,7 @@
         display: flex;
         flex-direction: column;
         justify-content: end;
-        height: 100%;
+        min-height: calc(100vh - 4rem);
         padding: 2rem;
         border: 1px solid #18181b;
     }
