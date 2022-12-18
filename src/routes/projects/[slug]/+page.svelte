@@ -78,10 +78,10 @@
             >{showProjectNav ? "Close" : "View all projects"}</button
         >
         <div class="content">
-            {#each Object.values(PROJECT_DATA) as { id, title, gallery }}
+            {#each Object.values(PROJECT_DATA) as { id, title, thumbnail }}
                 <button class="card" on:click={() => goToProject(id)}>
                     <p>{title}</p>
-                    <img src={gallery[0].src} />
+                    <img src={thumbnail} alt="{title} thumbnail" />
                 </button>
             {/each}
         </div>

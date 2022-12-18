@@ -3,6 +3,7 @@ interface Project {
     title: string;
     company?: string;
     description: string;
+    thumbnail?: string;
     gallery:
         | {
               src: string;
@@ -33,9 +34,10 @@ export const PROJECT_DATA: ProjectData = {
         </ul>
         <i>Technologies used: React, TypeScript, Next.js, Three.js</i>
         `,
+        thumbnail: "/my work/xsyn/xsyn1.webp",
         gallery: [
             {
-                src: "/my work/xsyn/1.png",
+                src: "/my work/xsyn/xsyn1.webp",
             },
         ],
         next: "supremacy",
@@ -53,9 +55,10 @@ export const PROJECT_DATA: ProjectData = {
         </ul>
         <i>Technologies used: React, TypeScript, MUI, WebSockets, RESTful API, Go, Postgres, Docker</i>
         `,
+        thumbnail: "/my work/supremacy/supremacy1.webp",
         gallery: [
             {
-                src: "/my work/supremacy/1.png",
+                src: "/my work/supremacy/supremacy1.webp",
             },
         ],
         prev: "xsyn",
@@ -72,9 +75,10 @@ export const PROJECT_DATA: ProjectData = {
         </ul>
         <i>Technologies used: React, TypeScript, Next.js, Three.js, Prismic (headless CMS)</i>
         `,
+        thumbnail: "/my work/weareninja/weareninja1.webp",
         gallery: [
             {
-                src: "/my work/weareninja/1.png",
+                src: "/my work/weareninja/weareninja1.webp",
             },
         ],
         prev: "supremacy",
@@ -87,9 +91,10 @@ export const PROJECT_DATA: ProjectData = {
         <p>A website that I built to showcase all of my favourite art pieces from 2020. I experimented with mouse hover effects and custom cursor effects. The website also features fully animated page transitions, which I built from scratch (no external libraries used).</p>
         <i>Technologies used: HTML, CSS, TypeScript</i>
         `,
+        thumbnail: "/my work/art/art1.webp",
         gallery: [
             {
-                src: "/my work/art/1.png",
+                src: "/my work/art/art1.webp",
             },
         ],
         prev: "weareninja",

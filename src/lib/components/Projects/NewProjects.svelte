@@ -31,7 +31,7 @@
     <NewProjectCard
         href="/projects/xsyn"
         name="XSYN"
-        imageSrc="/my work/xsyn/1.png"
+        imageSrc="/my work/xsyn/xsyn1.webp"
         imageAlt="XSYN"
         {onEnterFocus}
         {onLeaveFocus}
@@ -40,7 +40,7 @@
     <NewProjectCard
         href="/projects/supremacy"
         name="Supremacy: Battle Arena"
-        imageSrc="/my work/supremacy/2.png"
+        imageSrc="/my work/supremacy/supremacy1.webp"
         imageAlt="Supremacy: Battle Arena"
         {onEnterFocus}
         {onLeaveFocus}
@@ -49,7 +49,7 @@
     <NewProjectCard
         href="/projects/weareninja"
         name="We Are Ninja"
-        imageSrc="/my work/weareninja/1.png"
+        imageSrc="/my work/weareninja/weareninja1.webp"
         imageAlt=""
         {onEnterFocus}
         {onLeaveFocus}
@@ -58,7 +58,7 @@
     <NewProjectCard
         href="/projects/art"
         name="Art Showcase 2020"
-        imageSrc="/my work/art/1.png"
+        imageSrc="/my work/art/art1.webp"
         imageAlt=""
         {onEnterFocus}
         {onLeaveFocus}
