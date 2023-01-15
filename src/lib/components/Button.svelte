@@ -1,9 +1,18 @@
 <script lang="ts">
-    export { sectionId };
+    export { sectionId, onEnterFocus, onLeaveFocus };
     let sectionId: string;
+    let onEnterFocus: () => void | undefined;
+    let onLeaveFocus: () => void | undefined;
 </script>
 
-<a href="#{sectionId}" class="c-Button">
+<a
+    href="#{sectionId}"
+    class="c-Button"
+    on:mouseenter={onEnterFocus}
+    on:mouseleave={onLeaveFocus}
+    on:focus={onEnterFocus}
+    on:blur={onLeaveFocus}
+>
     <slot />
 </a>
 

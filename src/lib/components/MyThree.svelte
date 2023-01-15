@@ -1,48 +1,93 @@
 <script lang="ts">
-    import { Canvas, T } from "@threlte/core";
-    import { BoxGeometry, Color, Vector3 } from "three";
+    import { T, useFrame } from "@threlte/core";
+    import { Color, Euler } from "three";
+    import { lerp } from "three/src/math/MathUtils";
 
-    let g: BoxGeometry;
-    let v3 = new Vector3();
+    export let shape: "projects" | "experience" | "skills" | undefined;
 
-    $: if (g) {
-        // https://blogg.bekk.no/procedural-planet-in-webgl-and-three-js-fc77f14f5505
-        const pos = g.attributes.position;
-        for (let i = 0; i < pos.count; i++) {
-            v3.fromBufferAttribute(pos, i);
-            v3.normalize().multiplyScalar(5);
-            pos.setXYZ(i, v3.x, v3.y, v3.z);
+    const color = new Color("pink").convertSRGBToLinear();
+
+    const lerpRotation = (rot1: Euler, rot2: Euler, f: number) => {
+        rot1.x = lerp(rot1.x, rot2.x, f);
+        rot1.y = lerp(rot1.y, rot2.y, f);
+        rot1.z = lerp(rot1.z, rot2.z, f);
+    };
+
+    const ROTATION_CLOSED = new Euler();
+    const ROTATION_OPEN = new Euler(Math.PI / 4, Math.PI / 4, Math.PI / 4);
+    let cubeRotation = new Euler();
+    let coneRotation = new Euler();
+    let torusRotation = new Euler();
+
+    const SCALE_CLOSED = 0;
+    const SCALE_OPEN = 1;
+    let cubeScale = 0;
+    let coneScale = 0;
+    let torusScale = 0;
+
+    let prevTimestamp: number;
+    useFrame(({ clock }) => {
+        const elapsed = clock.getElapsedTime();
+        if (!prevTimestamp) {
+            prevTimestamp = elapsed;
         }
-    }
-    const color = new Color("#27272a").convertSRGBToLinear();
+        const delta = elapsed - prevTimestamp;
+        prevTimestamp = elapsed;
+
+        const scaleSpeed = 10 * delta;
+        const rotationSpeed = 10 * delta;
+        switch (shape) {
+            case "projects":
+                cubeScale = lerp(cubeScale, SCALE_OPEN, scaleSpeed);
+                coneScale = lerp(coneScale, SCALE_CLOSED, scaleSpeed);
+                torusScale = lerp(torusScale, SCALE_CLOSED, scaleSpeed);
+
+                lerpRotation(cubeRotation, ROTATION_OPEN, rotationSpeed);
+                lerpRotation(coneRotation, ROTATION_CLOSED, rotationSpeed);
+                lerpRotation(torusRotation, ROTATION_CLOSED, rotationSpeed);
+                break;
+            case "experience":
+                cubeScale = lerp(cubeScale, SCALE_CLOSED, scaleSpeed);
+                coneScale = lerp(coneScale, SCALE_OPEN, scaleSpeed);
+                torusScale = lerp(torusScale, SCALE_CLOSED, scaleSpeed);
+
+                lerpRotation(cubeRotation, ROTATION_CLOSED, rotationSpeed);
+                lerpRotation(coneRotation, ROTATION_OPEN, rotationSpeed);
+                lerpRotation(torusRotation, ROTATION_CLOSED, rotationSpeed);
+                break;
+            case "skills":
+                cubeScale = lerp(cubeScale, SCALE_CLOSED, scaleSpeed);
+                coneScale = lerp(coneScale, SCALE_CLOSED, scaleSpeed);
+                torusScale = lerp(torusScale, SCALE_OPEN, scaleSpeed);
+
+                lerpRotation(cubeRotation, ROTATION_CLOSED, rotationSpeed);
+                lerpRotation(coneRotation, ROTATION_CLOSED, rotationSpeed);
+                lerpRotation(torusRotation, ROTATION_OPEN, rotationSpeed);
+                break;
+            default:
+                cubeScale = lerp(cubeScale, SCALE_CLOSED, scaleSpeed);
+                coneScale = lerp(coneScale, SCALE_CLOSED, scaleSpeed);
+                torusScale = lerp(torusScale, SCALE_CLOSED, scaleSpeed);
+
+                lerpRotation(cubeRotation, ROTATION_CLOSED, rotationSpeed);
+                lerpRotation(coneRotation, ROTATION_CLOSED, rotationSpeed);
+                lerpRotation(torusRotation, ROTATION_CLOSED, rotationSpeed);
+        }
+        console.log(cubeRotation.x);
+    });
 </script>
 
-<div class="c-Three">
-    <Canvas
-        size={{
-            height: 700,
-            width: 700,
-        }}
-    >
-        <T.PerspectiveCamera makeDefault position={[0, 0, 10]} fov={74} />
+<T.PerspectiveCamera makeDefault position={[0, 0, 10]} fov={74} />
 
-        <!-- Sphere -->
-        <T.Group>
-            <T.Mesh>
-                <T.BoxGeometry bind:ref={g} args={[7, 7, 7, 32, 32, 32]} />
-                <T.MeshBasicMaterial {color} />
-            </T.Mesh>
-        </T.Group>
-    </Canvas>
-</div>
-
-<style>
-    .c-Three {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-    }
-</style>
+<T.Mesh scale={cubeScale} rotation={[cubeRotation.x, cubeRotation.y, cubeRotation.z]}>
+    <T.BoxGeometry args={[5, 5, 5, 32, 32, 32]} />
+    <T.MeshBasicMaterial {color} />
+</T.Mesh>
+<T.Mesh scale={coneScale} rotation={[coneRotation.x, coneRotation.y, coneRotation.z]}>
+    <T.ConeGeometry args={[5, 10, 32]} />
+    <T.MeshBasicMaterial {color} />
+</T.Mesh>
+<T.Mesh scale={torusScale} rotation={[torusRotation.x, torusRotation.y, torusRotation.z]}>
+    <T.TorusKnotGeometry args={[2, 0.6, 100, 16]} />
+    <T.MeshBasicMaterial {color} />
+</T.Mesh>

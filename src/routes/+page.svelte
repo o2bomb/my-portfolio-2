@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import Experience from "$lib/components/Experience/Experience.svelte";
+    import MyThree from "$lib/components/MyThree.svelte";
     import NewProjects from "$lib/components/Projects/NewProjects.svelte";
     import Skills from "$lib/components/Skills/Skills.svelte";
+    import { Canvas } from "@threlte/core";
     import { onMount } from "svelte";
 
     // Control whether or not to show NavButton based on hero visibility
@@ -25,6 +27,8 @@
         const target = document.getElementById("hero");
         observer.observe(target);
     });
+
+    let section: "projects" | "experience" | "skills" | undefined;
 </script>
 
 <svelte:head>
@@ -34,7 +38,11 @@
 
 <section id="hero">
     <div class="content">
-        <!-- <MyThree /> -->
+        <div class="three">
+            <Canvas>
+                <MyThree shape={section} />
+            </Canvas>
+        </div>
         <div class="heading cut-in">
             <h1>Yong "Felix" Tan</h1>
             <address>
@@ -52,9 +60,33 @@
         </div>
         <div class="actions">
             <div class="wrap">
-                <Button sectionId="projects">Projects</Button>
-                <Button sectionId="experience">Experience</Button>
-                <Button sectionId="skills">Skills</Button>
+                <Button
+                    sectionId="projects"
+                    onEnterFocus={() => {
+                        section = "projects";
+                    }}
+                    onLeaveFocus={() => {
+                        section = undefined;
+                    }}>Projects</Button
+                >
+                <Button
+                    sectionId="experience"
+                    onEnterFocus={() => {
+                        section = "experience";
+                    }}
+                    onLeaveFocus={() => {
+                        section = undefined;
+                    }}>Experience</Button
+                >
+                <Button
+                    sectionId="skills"
+                    onEnterFocus={() => {
+                        section = "skills";
+                    }}
+                    onLeaveFocus={() => {
+                        section = undefined;
+                    }}>Skills</Button
+                >
             </div>
         </div>
     </div>
@@ -71,6 +103,7 @@
     }
 
     .content {
+        z-index: 0;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -82,6 +115,16 @@
 
     .content > *:not(:last-child) {
         margin-bottom: 1rem;
+    }
+
+    .three {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: max(900px, 45vw);
+        height: 100%;
     }
 
     .heading > * {
