@@ -38,7 +38,10 @@
         <div class="heading cut-in">
             <h1>Yong "Felix" Tan</h1>
             <address>
-                <a href="mailto:yong@felixtan.me">yong@felixtan.me</a>
+                <a href="mailto:yong@felixtan.me"><span>mail:</span> yong@felixtan.me</a>
+                <a href="https://github.com/o2bomb"
+                    ><span>github:</span> https://github.com/o2bomb</a
+                >
             </address>
         </div>
 
@@ -84,15 +87,23 @@
         margin-bottom: 1rem;
     }
 
-    .heading > * {
-        display: inline-block;
+    .heading {
+        display: flex;
+        align-items: end;
+        width: fit-content;
     }
     h1 {
         font: var(--font-oswald-regular);
     }
     address {
-        margin-left: 0.5rem;
+        display: inline-flex;
+        flex-direction: column;
+        margin-left: 1rem;
         font-style: normal;
+        margin-bottom: -1px;
+    }
+    address a span {
+        color: #52525b;
     }
 
     .description {
