@@ -47,9 +47,12 @@
 
         <div class="description cut-in">
             <p>
-                I am currently part of the core development team working on the Supremacy Battle
-                Arena at Ninja Syndicate, working as a frontend/full stack developer. I love all
-                things frontend, and I am always looking for ways to grow as a web developer.
+                I am currently part of the <a href="https://www.jasper.ai/chrome-extension"
+                    >browser extensions team</a
+                >
+                at <a href="https://www.jasper.ai/">Jasper</a>, working as a software engineer. I
+                love all things frontend, and I am always looking for ways to grow as a web
+                developer.
             </p>
             <p>I am a collaborator, an eager learner and a career-driven individual.</p>
         </div>

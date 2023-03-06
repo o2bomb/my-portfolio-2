@@ -8,8 +8,21 @@
     </div>
     <ExperienceItem
         animate
+        company="Jasper - AI Copywriter | AI Content Generator for Teams"
+        from="Mar 2023"
+        role="Software Engineer"
+        assignedProjects={[
+            {
+                name: "Jasper Chrome Extension",
+                achievements: [],
+            },
+        ]}
+    />
+    <ExperienceItem
+        animate
         company="Ninja Syndicate (formerly Ninja Software)"
         from="Mar 2021"
+        to="Dec 2022"
         role="Fullstack Web Developer"
         assignedProjects={[
             {
