@@ -48,7 +48,7 @@
         <div class="description cut-in">
             <p>
                 I am currently part of the <a href="https://www.jasper.ai/chrome-extension"
-                    >browser extensions team</a
+                    >browser extension team</a
                 >
                 at <a href="https://www.jasper.ai/">Jasper</a>, working as a software engineer. I
                 love all things frontend, and I am always looking for ways to grow as a web
